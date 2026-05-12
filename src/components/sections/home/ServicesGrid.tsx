@@ -11,7 +11,7 @@ export default function ServicesGrid() {
         <SectionHeader
           accent="Astrology Solutions"
           title="Guidance for Every Challenge"
-          subtitle="Authentic Vedic remedies, delivered with three decades of mastery — across all the situations life can present."
+          subtitle="Authentic Vedic remedies, delivered with three decades of mastery, across all the situations life can present."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featured.map((s, i) => (

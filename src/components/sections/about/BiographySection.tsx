@@ -2,8 +2,8 @@ import Image from 'next/image';
 import { PLACEHOLDER_IMG } from '@/constants/siteConfig';
 
 const paragraphs = [
-  "Born into a lineage of Vedic scholars and trained from an early age in the classical Sanskrit corpus, Pandit Sri Vishwanath Guruji established Sri Panchamukhi Astro Centre in Jayanagar, Bangalore, in 1989 — at a time when authentic Vedic counsel was becoming increasingly rare in urban India.",
-  "Over the past three and a half decades, Guruji has counselled more than 55,000 seekers — from young couples navigating their first marital crisis to seasoned business leaders facing political and legal obstacles. His method blends deep classical knowledge of the Brihat Parashara Hora Shastra and Jaimini Sutras with a practical, ethical, and unsentimental approach to remedy.",
+  "Born into a lineage of Vedic scholars and trained from an early age in the classical Sanskrit corpus, Pandit Sri Vishwanath Guruji established Sri Panchamukhi Astro Centre in Jayanagar, Bangalore, in 1989, at a time when authentic Vedic counsel was becoming increasingly rare in urban India.",
+  "Over the past three and a half decades, Guruji has counselled more than 55,000 seekers, from young couples navigating their first marital crisis to seasoned business leaders facing political and legal obstacles. His method blends deep classical knowledge of the Brihat Parashara Hora Shastra and Jaimini Sutras with a practical, ethical, and unsentimental approach to remedy.",
   "What sets Guruji apart is his refusal to traffic in fear. He is direct about what astrology can and cannot do; he never prescribes a remedy he himself would not perform; and every consultation ends not with a prediction but with a clear, actionable path forward.",
 ];
 

@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "What makes Guruji's methods different?",
-    a: 'Pandit Sri Vishwanath Guruji combines rigorous classical training with three decades of practical experience. Every remedy is personalised — never generic — and rooted in original Sanskrit texts rather than diluted modern interpretations.',
+    a: 'Pandit Sri Vishwanath Guruji combines rigorous classical training with three decades of practical experience. Every remedy is personalised, never generic, and rooted in original Sanskrit texts rather than diluted modern interpretations.',
   },
   {
     q: 'How accurate are the predictions?',
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: 'What types of problems can Guruji solve?',
-    a: 'Marriage, career, finance, health, family disputes, black magic protection, vastu corrections, court cases, political success, childlessness — Guruji has counselled across all 13 specialised practice areas listed on this site.',
+    a: 'Marriage, career, finance, health, family disputes, black magic protection, vastu corrections, court cases, political success, childlessness, Guruji has counselled across all 13 specialised practice areas listed on this site.',
   },
   {
     q: 'Do I need to visit in person?',
@@ -40,7 +40,7 @@ export default function WhyChooseUs() {
             align="left"
             accent="Why Choose Guruji"
             title="Trusted by Generations of Families"
-            subtitle="A practice built on direct, ethical, classical guidance — not vague predictions."
+            subtitle="A practice built on direct, ethical, classical guidance, not vague predictions."
           />
           <div>
             {faqs.map((f, i) => (

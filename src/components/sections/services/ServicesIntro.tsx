@@ -7,7 +7,7 @@ export default function ServicesIntro() {
         <SectionHeader
           accent="Practice Areas"
           title="Thirteen Specialised Solutions"
-          subtitle="Pandit Sri Vishwanath Guruji has refined his counsel into thirteen specialised practice areas — each addressing a distinct cluster of life situations through proven Vedic remedies."
+          subtitle="Pandit Sri Vishwanath Guruji has refined his counsel into thirteen specialised practice areas, each addressing a distinct cluster of life situations through proven Vedic remedies."
         />
       </div>
     </section>

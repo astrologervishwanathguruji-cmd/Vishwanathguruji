@@ -16,6 +16,7 @@ export default function ServiceCard({ service, index = 0 }: ServiceCardProps) {
 
   return (
     <motion.div
+      className="h-full min-w-0"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -23,9 +24,9 @@ export default function ServiceCard({ service, index = 0 }: ServiceCardProps) {
     >
       <Link
         href={`/services/${service.slug}`}
-        className="group relative block rounded-lg overflow-hidden shadow-sm bg-site-white border border-site-border/30 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
+        className="group relative flex h-full min-h-0 flex-col overflow-hidden rounded-lg border border-site-border/30 bg-site-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
       >
-        <div className="relative h-48 overflow-hidden">
+        <div className="relative h-48 shrink-0 overflow-hidden">
           <Image
             src={service.heroImage}
             alt={service.title}
@@ -39,17 +40,15 @@ export default function ServiceCard({ service, index = 0 }: ServiceCardProps) {
             </span>
           </div>
         </div>
-        <div className="p-5 text-center">
-          <div className="w-12 h-12 rounded-full bg-accent-pale text-accent mx-auto -mt-10 mb-3 relative z-10 flex items-center justify-center ring-4 ring-site-white shadow-sm">
+        <div className="flex min-h-0 flex-1 flex-col p-5 text-center">
+          <div className="relative z-10 mx-auto -mt-10 mb-3 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent-pale text-accent shadow-sm ring-4 ring-site-white">
             <Icon size={20} strokeWidth={1.75} />
           </div>
-          <h3 className="font-display text-lg text-primary font-semibold mb-2">
-            {service.title}
-          </h3>
-          <p className="text-sm text-site-text-muted leading-relaxed line-clamp-2">
+          <h3 className="mb-2 shrink-0 font-display text-lg font-semibold text-primary">{service.title}</h3>
+          <p className="min-h-0 flex-1 text-sm leading-relaxed text-site-text-muted line-clamp-3">
             {service.shortDescription}
           </p>
-          <span className="inline-block mt-3 text-xs font-semibold text-accent tracking-wide">
+          <span className="mt-auto inline-block pt-3 text-xs font-semibold tracking-wide text-accent">
             Read More →
           </span>
         </div>

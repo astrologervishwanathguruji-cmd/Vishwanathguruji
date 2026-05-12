@@ -1,11 +1,11 @@
 import type { BlogPost } from '@/types';
 import { PLACEHOLDER_IMG } from './siteConfig';
 
-const longBody = `Vedic astrology is far more than a system of prediction — it is a contemplative science of timing, karma, and self-knowledge. In this article, Pandit Sri Vishwanath Guruji explains the foundational principles every seeker should understand before approaching the shastra.
+const longBody = `Vedic astrology is far more than a system of prediction, it is a contemplative science of timing, karma, and self-knowledge. In this article, Pandit Sri Vishwanath Guruji explains the foundational principles every seeker should understand before approaching the shastra.
 
 The birth chart, or janma kundali, is a map of the planetary positions at the precise moment of one's birth. Each planet exerts both a generic and a personal influence, and the strength of these influences shifts across the lifetime through the dasha system.
 
-Many seekers come to astrology expecting a verdict. The Vedic tradition offers something deeper: an instrument of preparation. By understanding which planetary period is active, one can act in harmony with the prevailing winds rather than against them — and the right remedy, performed at the right time, can transform the trajectory of an entire life.`;
+Many seekers come to astrology expecting a verdict. The Vedic tradition offers something deeper: an instrument of preparation. By understanding which planetary period is active, one can act in harmony with the prevailing winds rather than against them, and the right remedy, performed at the right time, can transform the trajectory of an entire life.`;
 
 export const BLOG: BlogPost[] = [
   {
@@ -23,7 +23,7 @@ export const BLOG: BlogPost[] = [
     slug: 'signs-of-black-magic',
     title: '7 Subtle Signs You May Be Affected by Black Magic',
     excerpt:
-      'Disturbed sleep, sudden quarrels, unexplained illness — Guruji explains the early warning signals and what to do about them.',
+      'Disturbed sleep, sudden quarrels, unexplained illness, Guruji explains the early warning signals and what to do about them.',
     date: '2026-01-22',
     image: PLACEHOLDER_IMG,
     category: 'Protection',
@@ -34,7 +34,7 @@ export const BLOG: BlogPost[] = [
     slug: 'vastu-tips-for-home',
     title: '5 Simple Vastu Tips for a Harmonious Home',
     excerpt:
-      'Small placement changes that align your home with the five elements — no demolition required.',
+      'Small placement changes that align your home with the five elements, no demolition required.',
     date: '2025-12-30',
     image: PLACEHOLDER_IMG,
     category: 'Vastu Shastra',
@@ -45,7 +45,7 @@ export const BLOG: BlogPost[] = [
     slug: 'kaal-sarp-dosh-explained',
     title: 'Kaal Sarp Dosh: What It Is and How to Remedy It',
     excerpt:
-      'A clear explanation of one of the most feared planetary configurations — and the proven remedies that resolve it.',
+      'A clear explanation of one of the most feared planetary configurations, and the proven remedies that resolve it.',
     date: '2025-11-18',
     image: PLACEHOLDER_IMG,
     category: 'Doshas',
@@ -56,7 +56,7 @@ export const BLOG: BlogPost[] = [
     slug: 'how-to-choose-gemstone',
     title: 'Choosing the Right Gemstone for Your Birth Chart',
     excerpt:
-      'Why a wrongly chosen gemstone can harm — and how Guruji prescribes the correct stone, weight, and timing for each client.',
+      'Why a wrongly chosen gemstone can harm, and how Guruji prescribes the correct stone, weight, and timing for each client.',
     date: '2025-10-04',
     image: PLACEHOLDER_IMG,
     category: 'Remedies',

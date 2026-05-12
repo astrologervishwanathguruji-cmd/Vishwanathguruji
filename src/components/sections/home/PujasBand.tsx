@@ -22,7 +22,7 @@ export default function PujasBand() {
           <div className="w-10 h-[3px] bg-accent my-4" />
           <p className="text-site-white/80 max-w-md mb-6 leading-relaxed">
             Authentic Vedic rituals performed by Guruji for prosperity, protection, and spiritual
-            harmony — drawn from original Sanskrit texts and conducted with traditional precision.
+            harmony, drawn from original Sanskrit texts and conducted with traditional precision.
           </p>
           <ul className="space-y-2 mb-7">
             {featured.map((p) => (

@@ -129,6 +129,13 @@ export default function Navbar() {
     return () => ro.disconnect();
   }, []);
 
+  useLayoutEffect(() => {
+    if (!menuOpen) return;
+    const el = headerRef.current;
+    if (!el) return;
+    setHeaderHeight(el.offsetHeight);
+  }, [menuOpen]);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -138,10 +145,20 @@ export default function Navbar() {
 
   return (
     <>
+      {menuOpen ? (
+        <div
+          aria-hidden
+          className="w-full shrink-0"
+          style={{
+            height: headerHeight > 0 ? `${headerHeight}px` : undefined,
+          }}
+        />
+      ) : null}
       <header
         ref={headerRef}
         className={cn(
-          'sticky top-0 z-[100] transition-all duration-300',
+          menuOpen ? 'fixed top-0 left-0 right-0 z-[110] w-full' : 'sticky top-0 z-[100]',
+          'transition-all duration-300',
           scrolled ? 'shadow-md' : '',
         )}
       >

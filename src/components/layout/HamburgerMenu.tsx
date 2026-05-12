@@ -10,7 +10,7 @@ import { SERVICES } from '@/constants/services';
 interface HamburgerMenuProps {
   isOpen: boolean;
   onClose: () => void;
-  /** Pixels from top of viewport — overlay & drawer start below the sticky header */
+  /** Pixels from top of viewport, overlay & drawer start below the sticky header */
   topOffset: number;
 }
 

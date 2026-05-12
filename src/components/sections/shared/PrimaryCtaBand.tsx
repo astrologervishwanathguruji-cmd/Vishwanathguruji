@@ -6,7 +6,7 @@ interface PrimaryCtaBandProps {
   title: string;
   description: string;
   children: ReactNode;
-  /** Decorative ॐ watermark — `right` matches About / Mission default */
+  /** Decorative ॐ watermark, `right` matches About / Mission default */
   omSide?: 'left' | 'right';
   className?: string;
 }

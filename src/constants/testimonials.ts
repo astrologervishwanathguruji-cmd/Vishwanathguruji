@@ -42,7 +42,7 @@ export const TESTIMONIALS: Testimonial[] = [
     serviceSlug: 'black-magic-remedies',
     rating: 5,
     quote:
-      "Constant nightmares, sudden illness in the family, business losses — all began after a jealous neighbour. Guruji removed the negativity in 21 days. We are whole again.",
+      "Constant nightmares, sudden illness in the family, business losses, all began after a jealous neighbour. Guruji removed the negativity in 21 days. We are whole again.",
     avatar: PLACEHOLDER_IMG,
     date: '2025-06-15',
   },
@@ -75,7 +75,7 @@ export const TESTIMONIALS: Testimonial[] = [
     serviceSlug: 'vastu-shastra',
     rating: 5,
     quote:
-      "Guruji visited our new home before the housewarming. The Vastu corrections he suggested were small but powerful — our family\'s health and finances have flourished since.",
+      "Guruji visited our new home before the housewarming. The Vastu corrections he suggested were small but powerful, our family\'s health and finances have flourished since.",
     avatar: PLACEHOLDER_IMG,
     date: '2025-11-18',
   },

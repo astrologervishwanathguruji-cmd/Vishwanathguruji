@@ -6,13 +6,13 @@ const credentials = [
     icon: BookOpen,
     title: 'Classical Training',
     description:
-      'Deep study in Brihat Parashara Hora Shastra, Jaimini Sutras, and the Atharva Veda — under traditional gurukul guidance.',
+      'Deep study in Brihat Parashara Hora Shastra, Jaimini Sutras, and the Atharva Veda, under traditional gurukul guidance.',
   },
   {
     icon: Users2,
     title: '55,000+ Consultations',
     description:
-      'Over three decades of direct one-on-one counsel — across every life situation, from marriage to court cases.',
+      'Over three decades of direct one-on-one counsel, across every life situation, from marriage to court cases.',
   },
   {
     icon: Award,
@@ -24,7 +24,7 @@ const credentials = [
     icon: Globe2,
     title: 'Global Reach',
     description:
-      'Clients across India and the diaspora — consultations offered in-person, over phone, and via WhatsApp.',
+      'Clients across India and the diaspora, consultations offered in-person, over phone, and via WhatsApp.',
   },
 ];
 

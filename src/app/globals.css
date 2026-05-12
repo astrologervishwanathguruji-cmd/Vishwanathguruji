@@ -59,7 +59,7 @@ h1, h2, h3, h4 {
   pointer-events: none;
 }
 
-/* Testimonials Swiper — cream `bg-site-surface`; avoid hero (white) dots here */
+/* Testimonials Swiper, cream `bg-site-surface`; avoid hero (white) dots here */
 .t-pagination {
   box-sizing: content-box;
 }
@@ -86,7 +86,7 @@ h1, h2, h3, h4 {
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-primary) 25%, transparent);
 }
 
-/* Home testimonials Swiper — equal row height (tallest card in view sets height for all) */
+/* Home testimonials Swiper, equal row height (tallest card in view sets height for all) */
 .testimonials-swiper .swiper-wrapper {
   align-items: stretch;
 }

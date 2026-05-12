@@ -9,7 +9,7 @@ export default function ScrollTicker() {
           <span className="font-mono text-xs uppercase tracking-[0.18em] text-site-white/90">
             {title}
           </span>
-          <span className="font-devanagari text-accent-light text-lg leading-none">— ॐ —</span>
+          <span className="font-devanagari text-accent-light text-lg leading-none">· ॐ ·</span>
         </span>
       ))}
     </div>

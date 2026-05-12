@@ -45,7 +45,7 @@ export const PUJAS: Puja[] = [
     slug: 'kaal-sarp-dosh-nivaran',
     title: 'Kaal Sarp Dosh Nivaran',
     description:
-      'A specialised ritual for those born with Kaal Sarp Dosh — when all seven planets are caught between Rahu and Ketu in the birth chart. Performed at sacred shrines or at the centre.',
+      'A specialised ritual for those born with Kaal Sarp Dosh, when all seven planets are caught between Rahu and Ketu in the birth chart. Performed at sacred shrines or at the centre.',
     benefits: [
       'Removal of mysterious life obstacles',
       'Career and financial breakthroughs',
@@ -71,7 +71,7 @@ export const PUJAS: Puja[] = [
 
 export const PUJAS_SHLOKA = {
   devanagari: 'ॐ सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः।\nसर्वे भद्राणि पश्यन्तु मा कश्चिद् दुःखभाग्भवेत्॥',
-  /** Kannada script — pairs with `font-kannada` (Noto Serif Kannada) */
+  /** Kannada script, pairs with `font-kannada` (Noto Serif Kannada) */
   kannada:
     'ಓಂ ಸರ್ವೇ ಭವಂತು ಸುಖಿನಃ ಸರ್ವೇ ಸಂತು ನಿರಾಮಯಾಃ।\nಸರ್ವೇ ಭದ್ರಾಣಿ ಪಶ್ಯಂತು ಮಾ ಕಶ್ಚಿದ್ ದುಃಖಭಾಗ್ಭವೇತ್॥',
   translation:

@@ -10,7 +10,7 @@ import { buildMetadata } from '@/lib/metadata';
 export const metadata = buildMetadata({
   title: 'Astrology Solutions',
   description:
-    'Explore all 13 specialised astrology solutions offered by Pandit Sri Vishwanath Guruji — Vashikaran, Black Magic Remedies, Vastu, marriage, career, family, and more.',
+    'Explore all 13 specialised astrology solutions offered by Pandit Sri Vishwanath Guruji, Vashikaran, Black Magic Remedies, Vastu, marriage, career, family, and more.',
   path: '/services',
 });
 
@@ -29,7 +29,7 @@ export default function ServicesPage() {
       <PrimaryCtaBand
         label="Book a Consultation"
         title="Book a Consultation Today"
-        description="Same-day appointments are often available. Reach Guruji now for guidance rooted in classical Vedic texts — confidential, ethical, and clear."
+        description="Same-day appointments are often available. Reach Guruji now for guidance rooted in classical Vedic texts, confidential, ethical, and clear."
         omSide="right"
       >
         <Button href="/contact" variant="gold" size="lg">

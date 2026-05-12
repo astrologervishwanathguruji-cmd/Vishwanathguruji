@@ -10,7 +10,7 @@ export default function GlobalClosingCta() {
       <PrimaryCtaBand
         label="Next Step"
         title="Begin your consultation with Guruji"
-        description="Whether you seek guidance on career, relationships, protection, or spiritual balance — reach out for a confidential Vedic consultation."
+        description="Whether you seek guidance on career, relationships, protection, or spiritual balance, reach out for a confidential Vedic consultation."
         omSide="right"
       >
         <Button href="/contact" variant="gold" size="lg">

@@ -51,7 +51,7 @@ export default function AboutSummary() {
           <div className="space-y-4 text-site-text-muted leading-relaxed">
             <p>
               For more than three decades, Pandit Sri Vishwanath Guruji has been a beacon of
-              Vedic wisdom in Jayanagar, Bangalore — guiding seekers from across India and the
+              Vedic wisdom in Jayanagar, Bangalore, guiding seekers from across India and the
               diaspora through life&apos;s most stubborn challenges.
             </p>
             <p>
@@ -62,7 +62,7 @@ export default function AboutSummary() {
           </div>
 
           <blockquote className="border-l-4 border-accent bg-accent-pale/60 pl-4 py-3 my-6 italic font-display text-lg text-primary">
-            &ldquo;Astrology is not prediction — it is preparation. A map for the soul.&rdquo;
+            &ldquo;Astrology is not prediction; it is preparation. A map for the soul.&rdquo;
           </blockquote>
 
           <div className="grid grid-cols-2 gap-3 mb-6">

@@ -18,7 +18,7 @@ export default function TestimonialsCarousel() {
         <SectionHeader
           accent="What Clients Say"
           title="Real Stories of Transformation"
-          subtitle="Drawn from over 55,000 consultations — a small selection of those who returned to share their gratitude."
+          subtitle="Drawn from over 55,000 consultations, a small selection of those who returned to share their gratitude."
         />
         <Swiper
           modules={[Autoplay, Navigation, Pagination]}

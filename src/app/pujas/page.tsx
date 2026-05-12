@@ -8,7 +8,7 @@ import { buildMetadata } from '@/lib/metadata';
 export const metadata = buildMetadata({
   title: 'Special Pujas & Sacred Rituals',
   description:
-    'Authentic Vedic pujas — Maha Mrityunjaya, Navagraha, Durga Saptashati, Kaal Sarp Dosh Nivaran, Lakshmi-Kubera — performed personally by Pandit Sri Vishwanath Guruji.',
+    'Authentic Vedic pujas, Maha Mrityunjaya, Navagraha, Durga Saptashati, Kaal Sarp Dosh Nivaran, Lakshmi-Kubera, performed personally by Pandit Sri Vishwanath Guruji.',
   path: '/pujas',
 });
 

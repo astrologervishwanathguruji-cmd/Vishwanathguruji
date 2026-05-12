@@ -9,7 +9,7 @@ import { buildMetadata } from '@/lib/metadata';
 export const metadata = buildMetadata({
   title: 'About Pandit Vishwanath Guruji',
   description:
-    "Learn about Pandit Sri Vishwanath Guruji — Bangalore's most trusted Vedic astrologer, with over 35 years of practice in Jayanagar.",
+    "Learn about Pandit Sri Vishwanath Guruji, Bangalore's most trusted Vedic astrologer, with over 35 years of practice in Jayanagar.",
   path: '/about',
 });
 

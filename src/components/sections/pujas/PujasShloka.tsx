@@ -12,7 +12,7 @@ export default function PujasShloka() {
             {PUJAS_SHLOKA.kannada}
           </p>
           <footer className="mt-6 text-base italic font-display text-site-text-muted">
-            — {PUJAS_SHLOKA.translation}
+            - {PUJAS_SHLOKA.translation}
           </footer>
         </blockquote>
       </div>

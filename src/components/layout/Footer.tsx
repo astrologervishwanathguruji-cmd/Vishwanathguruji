@@ -35,7 +35,7 @@ export default function Footer() {
             </div>
           </Link>
           <p className="text-sm leading-relaxed text-site-text-light/80">
-            Pandit Sri Vishwanath Guruji — Bangalore&apos;s most trusted Vedic astrologer, guiding
+            Pandit Sri Vishwanath Guruji, Bangalore&apos;s most trusted Vedic astrologer, guiding
             seekers since {SITE_CONFIG.established} through authentic Vedic remedies and
             consultations.
           </p>
@@ -86,7 +86,7 @@ export default function Footer() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="w-full h-full grayscale-[40%]"
-              title="Sri Panchamukhi Astro Centre — map preview"
+              title="Sri Panchamukhi Astro Centre, map preview"
             />
           </div>
           <p className="flex gap-2 text-sm leading-relaxed">

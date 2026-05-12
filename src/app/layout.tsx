@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_CONFIG.name}`,
   },
   description:
-    "Pandit Sri Vishwanath Guruji — Bangalore's most trusted Vedic astrologer with 35+ years of experience. Expert in Vashikaran, Black Magic Removal, Vastu Shastra, and life problem solutions.",
+    "Pandit Sri Vishwanath Guruji, Bangalore's most trusted Vedic astrologer with 35+ years of experience. Expert in Vashikaran, Black Magic Removal, Vastu Shastra, and life problem solutions.",
   keywords: [
     'astrologer bangalore',
     'vishwanath guruji',
