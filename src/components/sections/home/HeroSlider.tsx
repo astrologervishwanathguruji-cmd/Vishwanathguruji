@@ -2,13 +2,12 @@
 
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { ChevronLeft, ChevronRight, MoveDown } from 'lucide-react';
 import Button from '@/components/ui/Button';
 import { PLACEHOLDER_IMG } from '@/constants/siteConfig';
 
 import 'swiper/css';
-import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
@@ -44,8 +43,8 @@ export default function HeroSlider() {
   return (
     <section className="relative w-full h-[88vh] min-h-[560px] bg-site-dark-band overflow-hidden">
       <Swiper
-        modules={[EffectFade, Autoplay, Navigation, Pagination]}
-        effect="fade"
+        modules={[Autoplay, Navigation, Pagination]}
+        speed={600}
         autoplay={{ delay: 5500, disableOnInteraction: false }}
         loop
         navigation={{ prevEl: '.hero-prev', nextEl: '.hero-next' }}

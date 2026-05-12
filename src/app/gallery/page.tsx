@@ -1,6 +1,7 @@
 import PageHero from '@/components/ui/PageHero';
 import PhotoGallery from '@/components/sections/gallery/PhotoGallery';
 import VideoGallery from '@/components/sections/gallery/VideoGallery';
+import GlobalClosingCta from '@/components/sections/shared/GlobalClosingCta';
 import { buildMetadata } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
@@ -22,6 +23,7 @@ export default function GalleryPage() {
       />
       <PhotoGallery />
       <VideoGallery />
+      <GlobalClosingCta />
     </>
   );
 }

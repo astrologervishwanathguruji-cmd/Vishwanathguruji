@@ -9,10 +9,10 @@ export default function FloatingButtons() {
     <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
       <a
         href={`tel:${SITE_CONFIG.phone}`}
-        className="group relative w-12 h-12 rounded-full bg-accent text-site-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200"
+        className="group relative w-14 h-14 rounded-full bg-accent text-site-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200"
         aria-label="Call now"
       >
-        <Phone size={20} />
+        <Phone size={22} />
         <span className="absolute right-full mr-3 whitespace-nowrap bg-site-dark-band text-site-white text-xs px-3 py-1.5 rounded opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all pointer-events-none">
           Call Guruji
         </span>

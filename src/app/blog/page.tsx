@@ -1,6 +1,7 @@
 import PageHero from '@/components/ui/PageHero';
 import FeaturedPost from '@/components/sections/blog/FeaturedPost';
 import BlogGrid from '@/components/sections/blog/BlogGrid';
+import GlobalClosingCta from '@/components/sections/shared/GlobalClosingCta';
 import { BLOG } from '@/constants/blog';
 import { buildMetadata } from '@/lib/metadata';
 
@@ -25,6 +26,7 @@ export default function BlogPage() {
       />
       <FeaturedPost post={featured} />
       <BlogGrid posts={rest} />
+      <GlobalClosingCta />
     </>
   );
 }

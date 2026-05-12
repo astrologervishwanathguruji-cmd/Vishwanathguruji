@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Sparkles } from 'lucide-react';
 import { PLACEHOLDER_IMG } from '@/constants/siteConfig';
 
 const credentials = [
@@ -68,11 +67,7 @@ export default function AboutSummary() {
 
           <div className="grid grid-cols-2 gap-3 mb-6">
             {credentials.map((c) => (
-              <div
-                key={c}
-                className="flex items-center gap-2 bg-accent-pale/60 px-3 py-2 rounded-md"
-              >
-                <Sparkles size={14} className="text-accent shrink-0" />
+              <div key={c} className="bg-accent-pale/60 px-3 py-2 rounded-md">
                 <span className="text-sm text-site-text">{c}</span>
               </div>
             ))}

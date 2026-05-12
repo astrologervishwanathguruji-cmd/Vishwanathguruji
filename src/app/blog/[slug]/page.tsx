@@ -6,6 +6,7 @@ import PageHero from '@/components/ui/PageHero';
 import { BLOG, getBlogBySlug } from '@/constants/blog';
 import { buildMetadata } from '@/lib/metadata';
 import { formatDate } from '@/lib/utils';
+import GlobalClosingCta from '@/components/sections/shared/GlobalClosingCta';
 
 interface PageProps {
   params: { slug: string };
@@ -78,6 +79,7 @@ export default function BlogPostPage({ params }: PageProps) {
           </aside>
         </div>
       </section>
+      <GlobalClosingCta />
     </>
   );
 }

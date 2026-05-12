@@ -71,6 +71,9 @@ export const PUJAS: Puja[] = [
 
 export const PUJAS_SHLOKA = {
   devanagari: 'ॐ सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः।\nसर्वे भद्राणि पश्यन्तु मा कश्चिद् दुःखभाग्भवेत्॥',
+  /** Kannada script — pairs with `font-kannada` (Noto Serif Kannada) */
+  kannada:
+    'ಓಂ ಸರ್ವೇ ಭವಂತು ಸುಖಿನಃ ಸರ್ವೇ ಸಂತು ನಿರಾಮಯಾಃ।\nಸರ್ವೇ ಭದ್ರಾಣಿ ಪಶ್ಯಂತು ಮಾ ಕಶ್ಚಿದ್ ದುಃಖಭಾಗ್ಭವೇತ್॥',
   translation:
     'May all be happy, may all be free from illness, may all see what is auspicious, may no one suffer.',
 };

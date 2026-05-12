@@ -31,30 +31,30 @@ export default function TestimonialsCarousel() {
             1024: { slidesPerView: 3 },
           }}
           navigation={{ prevEl: '.t-prev', nextEl: '.t-next' }}
-          pagination={{ clickable: true, el: '.t-pagination', bulletClass: 'hero-dot', bulletActiveClass: 'hero-dot--active' }}
-          className="!pb-2"
+          pagination={{ clickable: true, el: '.t-pagination' }}
+          className="testimonials-swiper !pb-2"
         >
           {TESTIMONIALS.map((t) => (
-            <SwiperSlide key={t.id} className="h-auto">
-              <div className="h-full pb-6">
+            <SwiperSlide key={t.id}>
+              <div className="pb-6">
                 <TestimonialCard testimonial={t} />
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
 
-        <div className="flex items-center justify-center gap-5 mt-6">
+        <div className="mt-6 grid min-h-12 w-full grid-cols-[1fr_auto_1fr] items-center gap-x-4 sm:gap-x-5">
           <button
             type="button"
-            className="t-prev w-10 h-10 rounded-full border border-accent text-accent hover:bg-accent hover:text-site-white flex items-center justify-center transition-colors"
+            className="t-prev col-start-1 justify-self-end w-10 h-10 shrink-0 rounded-full border border-accent text-accent hover:bg-accent hover:text-site-white flex items-center justify-center transition-colors"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={18} />
           </button>
-          <div className="t-pagination flex items-center gap-2" />
+          <div className="t-pagination col-start-2 flex min-h-11 min-w-0 items-center justify-center gap-2 px-1" />
           <button
             type="button"
-            className="t-next w-10 h-10 rounded-full border border-accent text-accent hover:bg-accent hover:text-site-white flex items-center justify-center transition-colors"
+            className="t-next col-start-3 justify-self-start w-10 h-10 shrink-0 rounded-full border border-accent text-accent hover:bg-accent hover:text-site-white flex items-center justify-center transition-colors"
             aria-label="Next testimonial"
           >
             <ChevronRight size={18} />

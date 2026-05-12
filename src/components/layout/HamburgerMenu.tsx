@@ -2,22 +2,50 @@
 
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
-import { X, ChevronDown, Phone } from 'lucide-react';
-import { FaWhatsapp } from 'react-icons/fa';
-import { useState } from 'react';
-import { SITE_CONFIG } from '@/constants/siteConfig';
+import { ChevronDown } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { ALL_NAV_LINKS } from '@/constants/navLinks';
 import { SERVICES } from '@/constants/services';
 
 interface HamburgerMenuProps {
   isOpen: boolean;
   onClose: () => void;
+  /** Pixels from top of viewport — overlay & drawer start below the sticky header */
+  topOffset: number;
 }
 
 const panelTransition = { duration: 0.3, ease: [0.32, 0.72, 0, 1] as const };
 
-export default function HamburgerMenu({ isOpen, onClose }: HamburgerMenuProps) {
+export default function HamburgerMenu({ isOpen, onClose, topOffset }: HamburgerMenuProps) {
   const [servicesOpen, setServicesOpen] = useState(false);
+  const top = Math.max(0, topOffset);
+
+  useEffect(() => {
+    if (!isOpen) setServicesOpen(false);
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const html = document.documentElement;
+    const { body } = document;
+    const prevHtmlOverflow = html.style.overflow;
+    const prevBodyOverflow = body.style.overflow;
+    const prevBodyPaddingRight = body.style.paddingRight;
+    const scrollbarWidth = window.innerWidth - html.clientWidth;
+
+    html.style.overflow = 'hidden';
+    body.style.overflow = 'hidden';
+    if (scrollbarWidth > 0) {
+      body.style.paddingRight = `${scrollbarWidth}px`;
+    }
+
+    return () => {
+      html.style.overflow = prevHtmlOverflow;
+      body.style.overflow = prevBodyOverflow;
+      body.style.paddingRight = prevBodyPaddingRight;
+    };
+  }, [isOpen]);
 
   return (
     <AnimatePresence>
@@ -28,7 +56,8 @@ export default function HamburgerMenu({ isOpen, onClose }: HamburgerMenuProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-black/40 z-50"
+            className="fixed left-0 right-0 bottom-0 z-[90] bg-black/40"
+            style={{ top }}
             onClick={onClose}
             aria-hidden="true"
           />
@@ -37,34 +66,16 @@ export default function HamburgerMenu({ isOpen, onClose }: HamburgerMenuProps) {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={panelTransition}
-            className="fixed right-0 top-0 h-full w-[85vw] max-w-[320px] bg-primary z-50 flex flex-col"
+            className="fixed right-0 bottom-0 z-[90] flex w-[85vw] max-w-[320px] flex-col bg-primary shadow-2xl"
+            style={{ top }}
           >
-            <div className="flex items-center justify-between p-4 border-b border-primary-light/40">
-              <Link href="/" onClick={onClose} className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-accent text-site-white flex items-center justify-center font-devanagari">
-                  ॐ
-                </div>
-                <span className="font-display text-site-white font-semibold text-sm">
-                  Sri Panchamukhi
-                </span>
-              </Link>
-              <button
-                type="button"
-                onClick={onClose}
-                className="text-accent hover:text-accent-light p-1"
-                aria-label="Close menu"
-              >
-                <X size={22} />
-              </button>
-            </div>
-
             <motion.ul
               initial="hidden"
               animate="visible"
               variants={{
-                visible: { transition: { staggerChildren: 0.05, delayChildren: 0.1 } },
+                visible: { transition: { staggerChildren: 0.05, delayChildren: 0.08 } },
               }}
-              className="flex-1 overflow-y-auto px-4 py-3"
+              className="flex min-h-0 flex-1 flex-col overflow-y-auto overflow-x-hidden px-4 py-4 pb-8"
             >
               {ALL_NAV_LINKS.map((link) => {
                 if (link.children) {
@@ -80,7 +91,7 @@ export default function HamburgerMenu({ isOpen, onClose }: HamburgerMenuProps) {
                       <button
                         type="button"
                         onClick={() => setServicesOpen((s) => !s)}
-                        className="w-full flex items-center justify-between py-3 text-site-white font-display text-lg"
+                        className="flex w-full items-center justify-between py-3 font-display text-lg text-site-white"
                       >
                         {link.label}
                         <ChevronDown
@@ -125,7 +136,7 @@ export default function HamburgerMenu({ isOpen, onClose }: HamburgerMenuProps) {
                     <Link
                       href={link.href}
                       onClick={onClose}
-                      className="block py-3 text-site-white font-display text-lg hover:text-accent transition-colors"
+                      className="block py-3 font-display text-lg text-site-white transition-colors hover:text-accent"
                     >
                       {link.label}
                     </Link>
@@ -133,23 +144,6 @@ export default function HamburgerMenu({ isOpen, onClose }: HamburgerMenuProps) {
                 );
               })}
             </motion.ul>
-
-            <div className="p-4 border-t border-primary-light/40 grid grid-cols-1 gap-2">
-              <a
-                href={SITE_CONFIG.whatsapp}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-center gap-2 bg-[#25D366] text-site-white py-2.5 rounded-full font-semibold text-sm"
-              >
-                <FaWhatsapp size={18} /> WhatsApp
-              </a>
-              <a
-                href={`tel:${SITE_CONFIG.phone}`}
-                className="flex items-center justify-center gap-2 bg-accent text-site-white py-2.5 rounded-full font-semibold text-sm"
-              >
-                <Phone size={16} /> Call Guruji
-              </a>
-            </div>
           </motion.aside>
         </>
       )}

@@ -2,6 +2,7 @@ import PageHero from '@/components/ui/PageHero';
 import PujasShloka from '@/components/sections/pujas/PujasShloka';
 import PujaListing from '@/components/sections/pujas/PujaListing';
 import PujasBookingBand from '@/components/sections/pujas/PujasBookingBand';
+import DividerOrnament from '@/components/ui/DividerOrnament';
 import { buildMetadata } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
@@ -24,6 +25,7 @@ export default function PujasPage() {
       <PujasShloka />
       <PujaListing />
       <PujasBookingBand />
+      <DividerOrnament variant="lotus" />
     </>
   );
 }

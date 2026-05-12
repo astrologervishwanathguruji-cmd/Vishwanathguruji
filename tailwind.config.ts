@@ -32,6 +32,7 @@ const config: Config = {
         display: ['var(--font-display)', 'Georgia', 'serif'],
         body: ['var(--font-body)', 'system-ui', 'sans-serif'],
         devanagari: ['var(--font-devanagari)', 'serif'],
+        kannada: ['var(--font-kannada)', 'serif'],
       },
       spacing: {
         '18': '72px',

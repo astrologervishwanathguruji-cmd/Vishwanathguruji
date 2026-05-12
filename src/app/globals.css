@@ -24,6 +24,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -32,6 +33,7 @@ body {
   font-family: var(--font-body, system-ui, sans-serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
 }
 
 h1, h2, h3, h4 {
@@ -55,4 +57,53 @@ h1, h2, h3, h4 {
 .swiper-button-disabled {
   opacity: 0.35;
   pointer-events: none;
+}
+
+/* Testimonials Swiper — cream `bg-site-surface`; avoid hero (white) dots here */
+.t-pagination {
+  box-sizing: content-box;
+}
+
+.t-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 !important;
+  border-radius: 9999px;
+  background: color-mix(in srgb, var(--color-text-muted) 55%, var(--color-text) 45%);
+  opacity: 1;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-border) 70%, transparent);
+  cursor: pointer;
+  transition: width 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.t-pagination .swiper-pagination-bullet:hover {
+  background: color-mix(in srgb, var(--color-text-muted) 35%, var(--color-text) 65%);
+}
+
+.t-pagination .swiper-pagination-bullet-active {
+  width: 28px;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-primary) 25%, transparent);
+}
+
+/* Home testimonials Swiper — equal row height (tallest card in view sets height for all) */
+.testimonials-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+.testimonials-swiper .swiper-slide {
+  display: flex;
+  height: auto;
+  box-sizing: border-box;
+}
+.testimonials-swiper .swiper-slide > div {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  width: 100%;
+}
+.testimonials-swiper .swiper-slide > div > article {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto;
 }

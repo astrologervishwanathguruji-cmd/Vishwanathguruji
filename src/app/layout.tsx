@@ -1,5 +1,10 @@
 import type { Metadata } from 'next';
-import { Playfair_Display, DM_Sans, Noto_Serif_Devanagari } from 'next/font/google';
+import {
+  Playfair_Display,
+  DM_Sans,
+  Noto_Serif_Devanagari,
+  Noto_Serif_Kannada,
+} from 'next/font/google';
 // import { GoogleAnalytics } from '@next/third-parties/google';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -21,6 +26,12 @@ const dmSans = DM_Sans({
 const devanagari = Noto_Serif_Devanagari({
   subsets: ['devanagari'],
   variable: '--font-devanagari',
+  display: 'swap',
+  weight: ['400', '600'],
+});
+const kannada = Noto_Serif_Kannada({
+  subsets: ['kannada'],
+  variable: '--font-kannada',
   display: 'swap',
   weight: ['400', '600'],
 });
@@ -73,7 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${dmSans.variable} ${devanagari.variable}`}
+      className={`${playfair.variable} ${dmSans.variable} ${devanagari.variable} ${kannada.variable}`}
     >
       <head>
         <script

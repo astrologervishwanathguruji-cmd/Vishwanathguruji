@@ -20,6 +20,9 @@ const schema = z.object({
 
 type FormValues = z.infer<typeof schema>;
 
+/** Custom chevron — native OS arrows ignore padding and sit flush right */
+const PROBLEM_TYPE_SELECT_BG = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%236B6258' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")`;
+
 export default function ContactBand() {
   const [submitted, setSubmitted] = useState(false);
   const {
@@ -94,7 +97,13 @@ export default function ContactBand() {
                 <select
                   {...register('problemType')}
                   defaultValue=""
-                  className="w-full px-4 py-3 bg-site-white border border-site-border/60 rounded-md text-sm focus:outline-none focus:border-accent"
+                  className="w-full appearance-none cursor-pointer pl-4 pr-12 py-3 bg-site-white border border-site-border/60 rounded-md text-sm focus:outline-none focus:border-accent"
+                  style={{
+                    backgroundImage: PROBLEM_TYPE_SELECT_BG,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'right 1rem center',
+                    backgroundSize: '1.125rem 1.125rem',
+                  }}
                 >
                   <option value="" disabled>
                     Problem Type
@@ -137,21 +146,29 @@ export default function ContactBand() {
               {SITE_CONFIG.address}
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-site-white p-5 rounded-md border border-site-border/40">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="min-w-0 bg-site-white p-5 rounded-md border border-site-border/40">
               <div className="text-xs uppercase tracking-[0.18em] font-semibold text-accent mb-2">
                 Phone
               </div>
-              <a href={`tel:${SITE_CONFIG.phone}`} className="text-sm flex items-center gap-2">
-                <Phone size={14} className="text-accent" /> {SITE_CONFIG.phoneDisplay}
+              <a
+                href={`tel:${SITE_CONFIG.phone}`}
+                className="text-sm flex items-start gap-2 min-w-0 break-words"
+              >
+                <Phone size={14} className="text-accent shrink-0 mt-0.5" />
+                <span>{SITE_CONFIG.phoneDisplay}</span>
               </a>
             </div>
-            <div className="bg-site-white p-5 rounded-md border border-site-border/40">
+            <div className="min-w-0 bg-site-white p-5 rounded-md border border-site-border/40">
               <div className="text-xs uppercase tracking-[0.18em] font-semibold text-accent mb-2">
                 Email
               </div>
-              <a href={`mailto:${SITE_CONFIG.email}`} className="text-sm flex items-center gap-2">
-                <Mail size={14} className="text-accent" /> {SITE_CONFIG.email}
+              <a
+                href={`mailto:${SITE_CONFIG.email}`}
+                className="text-sm flex w-full min-w-0 max-w-full items-start gap-2"
+              >
+                <Mail size={14} className="text-accent shrink-0 mt-0.5" />
+                <span className="min-w-0 max-w-full break-all">{SITE_CONFIG.email}</span>
               </a>
             </div>
           </div>

@@ -5,6 +5,7 @@ import ServiceContent from '@/components/sections/service-detail/ServiceContent'
 import ServiceSidebar from '@/components/sections/service-detail/ServiceSidebar';
 import ServiceFAQ from '@/components/sections/service-detail/ServiceFAQ';
 import ServiceCTABand from '@/components/sections/service-detail/ServiceCTABand';
+import DividerOrnament from '@/components/ui/DividerOrnament';
 import { SERVICES, getServiceBySlug } from '@/constants/services';
 import { buildMetadata } from '@/lib/metadata';
 
@@ -49,6 +50,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
       </section>
       <ServiceFAQ service={service} />
       <ServiceCTABand serviceTitle={service.title} />
+      <DividerOrnament variant="lotus" />
     </>
   );
 }

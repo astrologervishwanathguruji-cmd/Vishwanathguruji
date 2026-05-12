@@ -1,6 +1,7 @@
 import PageHero from '@/components/ui/PageHero';
 import TestimonialsStatsBand from '@/components/sections/testimonials/TestimonialsStatsBand';
 import TestimonialsGrid from '@/components/sections/testimonials/TestimonialsGrid';
+import GlobalClosingCta from '@/components/sections/shared/GlobalClosingCta';
 import { buildMetadata } from '@/lib/metadata';
 
 export const metadata = buildMetadata({
@@ -22,6 +23,7 @@ export default function TestimonialsPage() {
       />
       <TestimonialsStatsBand />
       <TestimonialsGrid />
+      <GlobalClosingCta />
     </>
   );
 }

@@ -27,8 +27,8 @@ export default function Footer() {
       <div className="relative max-w-container mx-auto px-6 py-14 grid gap-10 md:grid-cols-[1.2fr_1fr_1fr] lg:gap-12">
         <div>
           <Link href="/" className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-full bg-accent text-site-white flex items-center justify-center font-devanagari text-xl">
-              ॐ
+            <div className="w-10 h-10 rounded-full bg-accent text-site-white flex items-center justify-center font-devanagari text-xl leading-none">
+              <span className="inline-flex items-center justify-center leading-none translate-y-1">ॐ</span>
             </div>
             <div className="font-display text-site-white font-bold text-lg leading-tight">
               {SITE_CONFIG.name}

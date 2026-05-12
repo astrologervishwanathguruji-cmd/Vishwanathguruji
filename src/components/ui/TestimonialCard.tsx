@@ -25,8 +25,13 @@ export default function TestimonialCard({ testimonial, compact = false }: Testim
       >
         “
       </span>
-      <div className="relative z-10 flex flex-col h-full">
-        <div className="flex gap-1 text-accent mb-3">
+      <div className="relative z-10 flex min-h-0 flex-1 flex-col">
+        <div
+          className={cn(
+            'flex gap-1 text-accent mb-3',
+            compact ? 'pl-10' : 'pl-12',
+          )}
+        >
           {Array.from({ length: testimonial.rating }).map((_, i) => (
             <Star key={i} size={14} fill="currentColor" strokeWidth={0} />
           ))}

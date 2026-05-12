@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, Mail, Phone } from 'lucide-react';
+import { Menu, X, Mail, Phone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { SITE_CONFIG } from '@/constants/siteConfig';
 import { PRIMARY_LINKS_LEFT, PRIMARY_LINKS_RIGHT } from '@/constants/navLinks';
@@ -17,11 +17,11 @@ function Logo({ compact = false }: { compact?: boolean }) {
     <Link href="/" className="flex flex-col items-center gap-1 group">
       <div
         className={cn(
-          'rounded-full bg-accent text-site-white flex items-center justify-center font-devanagari shadow-sm',
+          'rounded-full bg-accent text-site-white flex items-center justify-center font-devanagari shadow-sm leading-none',
           compact ? 'w-8 h-8 text-base' : 'w-10 h-10 text-xl',
         )}
       >
-        ॐ
+        <span className="inline-flex items-center justify-center leading-none translate-y-1">ॐ</span>
       </div>
       <div className="text-center">
         <div className={cn('font-display font-bold text-primary leading-tight', compact ? 'text-sm' : 'text-base')}>
@@ -116,6 +116,18 @@ function NavLinks({ links, align }: { links: typeof PRIMARY_LINKS_LEFT; align: '
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+  const [headerHeight, setHeaderHeight] = useState(0);
+
+  useLayoutEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    const measure = () => setHeaderHeight(el.offsetHeight);
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -127,22 +139,31 @@ export default function Navbar() {
   return (
     <>
       <header
+        ref={headerRef}
         className={cn(
-          'sticky top-0 z-40 transition-all duration-300',
+          'sticky top-0 z-[100] transition-all duration-300',
           scrolled ? 'shadow-md' : '',
         )}
       >
         <div className="bg-primary-dark text-accent-light text-[11px] hidden md:block">
-          <div className="max-w-container mx-auto px-6 py-1.5 flex items-center justify-between font-mono">
-            <div className="flex items-center gap-4">
-              <a href={`tel:${SITE_CONFIG.phone}`} className="flex items-center gap-1.5 hover:text-accent">
+          <div className="max-w-container mx-auto px-6 py-1.5 flex min-w-0 items-center justify-between gap-4 font-mono">
+            <div className="flex min-w-0 flex-1 items-center gap-4">
+              <a
+                href={`tel:${SITE_CONFIG.phone}`}
+                className="flex shrink-0 items-center gap-1.5 hover:text-accent"
+              >
                 <Phone size={11} /> {SITE_CONFIG.phoneDisplay}
               </a>
-              <a href={`mailto:${SITE_CONFIG.email}`} className="hidden sm:flex items-center gap-1.5 hover:text-accent">
-                <Mail size={11} /> {SITE_CONFIG.email}
+              <a
+                href={`mailto:${SITE_CONFIG.email}`}
+                title={SITE_CONFIG.email}
+                className="hidden min-w-0 items-center gap-1.5 hover:text-accent sm:flex"
+              >
+                <Mail size={11} className="shrink-0" />
+                <span className="min-w-0 truncate">{SITE_CONFIG.email}</span>
               </a>
             </div>
-            <div className="hidden sm:block uppercase tracking-wider">
+            <div className="hidden shrink-0 uppercase tracking-wider sm:block">
               {SITE_CONFIG.hoursShort} · {SITE_CONFIG.cityShort}
             </div>
           </div>
@@ -154,22 +175,12 @@ export default function Navbar() {
             scrolled && 'bg-site-white/90',
           )}
         >
-          <div className="max-w-container mx-auto px-6 py-3 grid grid-cols-[1fr_auto_1fr] items-center gap-4">
+          <div className="max-w-container mx-auto px-4 lg:px-6 py-3 flex items-center justify-between gap-3 lg:grid lg:grid-cols-[1fr_auto_1fr]">
             <NavLinks links={PRIMARY_LINKS_LEFT} align="left" />
 
-            <div className="flex items-center gap-3 lg:gap-0">
-              <button
-                type="button"
-                className="lg:hidden p-2 text-primary"
-                onClick={() => setMenuOpen(true)}
-                aria-label="Open menu"
-              >
-                <Menu size={24} />
-              </button>
-              <Logo />
-            </div>
+            <Logo />
 
-            <div className="flex items-center justify-end gap-6">
+            <div className="flex items-center justify-end gap-4 lg:gap-6">
               <ul className="hidden lg:flex items-center gap-6 text-sm text-site-text font-medium">
                 {PRIMARY_LINKS_RIGHT.map((l) => (
                   <li key={l.label}>
@@ -182,12 +193,25 @@ export default function Navbar() {
               <Button href="/contact" size="sm" className="hidden md:inline-flex">
                 Book Appointment
               </Button>
+              <button
+                type="button"
+                className="lg:hidden p-2 -mr-2 text-primary"
+                onClick={() => setMenuOpen((o) => !o)}
+                aria-expanded={menuOpen}
+                aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              >
+                {menuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
             </div>
           </div>
         </div>
       </header>
 
-      <HamburgerMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
+      <HamburgerMenu
+        isOpen={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        topOffset={headerHeight}
+      />
     </>
   );
 }

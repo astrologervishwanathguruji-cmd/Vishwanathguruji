@@ -1,5 +1,6 @@
 import { Phone, Mail } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
+import { cn } from '@/lib/utils';
 import { SITE_CONFIG } from '@/constants/siteConfig';
 
 const cards = [
@@ -36,16 +37,23 @@ export default function QuickContactBand() {
             href={href}
             target={external ? '_blank' : undefined}
             rel={external ? 'noreferrer' : undefined}
-            className="flex items-center gap-4 bg-primary-dark/50 hover:bg-primary-dark p-5 rounded-md border border-primary-light/30 transition-colors"
+            className="flex min-w-0 items-center gap-4 bg-primary-dark/50 hover:bg-primary-dark p-5 rounded-md border border-primary-light/30 transition-colors"
           >
             <span className="w-12 h-12 rounded-full bg-accent text-site-white flex items-center justify-center shrink-0">
               <Icon size={20} />
             </span>
-            <div>
+            <div className="min-w-0 flex-1">
               <div className="text-xs uppercase tracking-[0.18em] text-accent-light font-semibold">
                 {title}
               </div>
-              <div className="font-display font-semibold">{detail}</div>
+              <div
+                className={cn(
+                  'font-display font-semibold',
+                  title === 'Email' ? 'break-all' : 'break-words',
+                )}
+              >
+                {detail}
+              </div>
             </div>
           </a>
         ))}
