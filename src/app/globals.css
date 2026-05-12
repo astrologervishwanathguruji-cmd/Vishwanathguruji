@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #7B1C2C;
+  --color-primary-dark: #560F1C;
+  --color-primary-light: #9D3040;
+  --color-accent: #C9922A;
+  --color-accent-light: #E8B84B;
+  --color-accent-pale: #F5E4B8;
+  --color-bg: #FDF6EC;
+  --color-surface: #F5EDD9;
+  --color-surface-dark: #EDE0C4;
+  --color-text: #1A1A1A;
+  --color-text-muted: #6B6258;
+  --color-text-light: #A09488;
+  --color-white: #FFFDF8;
+  --color-border: #D4BF99;
+  --color-overlay: rgba(91, 18, 30, 0.72);
+  --color-dark-band: #2A0A10;
+  --color-dark-surface: #3D1018;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body, system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display, Georgia, serif);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+.swiper-button-disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
