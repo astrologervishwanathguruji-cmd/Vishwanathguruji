@@ -9,9 +9,10 @@ import type { Service } from '@/types';
 interface ServiceCardProps {
   service: Service;
   index?: number;
+  showIcon?: boolean;
 }
 
-export default function ServiceCard({ service, index = 0 }: ServiceCardProps) {
+export default function ServiceCard({ service, index = 0, showIcon = true }: ServiceCardProps) {
   const Icon = (Lucide[service.icon as keyof typeof Lucide] ?? Lucide.Sparkles) as Lucide.LucideIcon;
 
   return (
@@ -41,9 +42,11 @@ export default function ServiceCard({ service, index = 0 }: ServiceCardProps) {
           </div>
         </div>
         <div className="flex min-h-0 flex-1 flex-col p-5 text-center">
-          <div className="relative z-10 mx-auto -mt-10 mb-3 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent-pale text-accent shadow-sm ring-4 ring-site-white">
-            <Icon size={20} strokeWidth={1.75} />
-          </div>
+          {showIcon && (
+            <div className="relative z-10 mx-auto -mt-10 mb-3 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent-pale text-accent shadow-sm ring-4 ring-site-white">
+              <Icon size={20} strokeWidth={1.75} />
+            </div>
+          )}
           <h3 className="mb-2 shrink-0 font-display text-lg font-semibold text-primary">{service.title}</h3>
           <p className="min-h-0 flex-1 text-sm leading-relaxed text-site-text-muted line-clamp-3">
             {service.shortDescription}

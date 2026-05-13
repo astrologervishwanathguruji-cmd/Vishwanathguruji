@@ -10,15 +10,16 @@ import { SERVICES, getServiceBySlug } from '@/constants/services';
 import { buildMetadata } from '@/lib/metadata';
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-  const service = getServiceBySlug(params.slug);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const service = getServiceBySlug(slug);
   if (!service) return { title: 'Service not found' };
   return buildMetadata({
     title: service.title,
@@ -27,8 +28,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   });
 }
 
-export default function ServiceDetailPage({ params }: PageProps) {
-  const service = getServiceBySlug(params.slug);
+export default async function ServiceDetailPage({ params }: PageProps) {
+  const { slug } = await params;
+  const service = getServiceBySlug(slug);
   if (!service) notFound();
 
   return (

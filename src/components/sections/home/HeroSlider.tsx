@@ -44,12 +44,12 @@ export default function HeroSlider() {
     <section className="relative w-full h-[88vh] min-h-[560px] bg-site-dark-band overflow-hidden">
       <Swiper
         modules={[Autoplay, Navigation, Pagination]}
-        speed={600}
+        speed={950}
         autoplay={{ delay: 5500, disableOnInteraction: false }}
         loop
         navigation={{ prevEl: '.hero-prev', nextEl: '.hero-next' }}
         pagination={{ clickable: true, el: '.hero-pagination', bulletClass: 'hero-dot', bulletActiveClass: 'hero-dot--active' }}
-        className="h-full"
+        className="hero-swiper h-full"
       >
         {slides.map((s, i) => (
           <SwiperSlide key={s.headline}>
@@ -66,9 +66,6 @@ export default function HeroSlider() {
               <div className="absolute inset-0 flex items-center">
                 <div className="max-w-container w-full mx-auto px-6 md:px-10 text-site-white">
                   <div className="max-w-2xl">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-black/30 backdrop-blur-sm border border-accent-light/30 text-accent-light text-[10px] font-mono uppercase tracking-[0.18em] mb-5">
-                      · Trusted Since 1989 ·
-                    </span>
                     <div className="text-xs font-semibold text-accent uppercase tracking-[0.2em] mb-3">
                       Sri Panchamukhi Astro Centre
                     </div>
@@ -130,7 +127,11 @@ export default function HeroSlider() {
           background: #c9922a;
           width: 24px;
         }
+        .hero-swiper .swiper-wrapper {
+          transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+        }
       `}</style>
     </section>
   );
 }
+

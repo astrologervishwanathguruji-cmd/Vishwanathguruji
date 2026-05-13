@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://vishwanathguruji.com
+
+# Sitemaps
+Sitemap: https://vishwanathguruji.com/sitemap.xml

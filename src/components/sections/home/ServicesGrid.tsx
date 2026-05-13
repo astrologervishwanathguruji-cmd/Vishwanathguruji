@@ -15,7 +15,7 @@ export default function ServicesGrid() {
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featured.map((s, i) => (
-            <ServiceCard key={s.slug} service={s} index={i} />
+            <ServiceCard key={s.slug} service={s} index={i} showIcon={false} />
           ))}
         </div>
         <div className="text-center mt-10">

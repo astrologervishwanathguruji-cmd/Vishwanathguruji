@@ -9,15 +9,16 @@ import { formatDate } from '@/lib/utils';
 import GlobalClosingCta from '@/components/sections/shared/GlobalClosingCta';
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
   return BLOG.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-  const post = getBlogBySlug(params.slug);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogBySlug(slug);
   if (!post) return { title: 'Article not found' };
   return buildMetadata({
     title: post.title,
@@ -26,8 +27,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   });
 }
 
-export default function BlogPostPage({ params }: PageProps) {
-  const post = getBlogBySlug(params.slug);
+export default async function BlogPostPage({ params }: PageProps) {
+  const { slug } = await params;
+  const post = getBlogBySlug(slug);
   if (!post) notFound();
   const recent = BLOG.filter((p) => p.slug !== post.slug).slice(0, 4);
 
