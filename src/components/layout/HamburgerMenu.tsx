@@ -21,8 +21,15 @@ export default function HamburgerMenu({ isOpen, onClose, topOffset }: HamburgerM
   const top = Math.max(0, topOffset);
 
   useEffect(() => {
-    if (!isOpen) setServicesOpen(false);
-  }, [isOpen]);
+    if (!isOpen || !servicesOpen) return;
+
+    // Defer submenu reset to the next task to avoid synchronous state updates in effects.
+    const timeoutId = window.setTimeout(() => {
+      setServicesOpen(false);
+    }, 0);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [isOpen, servicesOpen]);
 
   useEffect(() => {
     if (!isOpen) return;
