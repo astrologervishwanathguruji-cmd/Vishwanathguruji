@@ -3,6 +3,7 @@ import { Instagram, Facebook, Youtube, MapPin, Phone } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { SITE_CONFIG } from '@/constants/siteConfig';
 import { ALL_NAV_LINKS } from '@/constants/navLinks';
+import { SERVICE_AREAS } from '@/constants/areas';
 import Button from '@/components/ui/Button';
 
 const socials = [
@@ -108,6 +109,25 @@ export default function Footer() {
           >
             Get Directions →
           </Button>
+        </div>
+      </div>
+
+      <div className="relative border-t border-site-dark-surface">
+        <div className="max-w-container mx-auto px-6 py-6">
+          <div className="text-[11px] uppercase tracking-[0.18em] font-semibold text-accent mb-3">
+            Best Astrologer Near You
+          </div>
+          <div className="flex flex-wrap gap-x-3 gap-y-2 text-xs text-site-text-light/80">
+            {SERVICE_AREAS.map((a) => (
+              <Link
+                key={a.slug}
+                href={`/best-astrologer-in/${a.slug}`}
+                className="hover:text-accent transition-colors"
+              >
+                Astrologer in {a.name}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
 

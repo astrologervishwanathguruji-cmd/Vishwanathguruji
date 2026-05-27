@@ -4,12 +4,20 @@ import BlogGrid from '@/components/sections/blog/BlogGrid';
 import GlobalClosingCta from '@/components/sections/shared/GlobalClosingCta';
 import { BLOG } from '@/constants/blog';
 import { buildMetadata } from '@/lib/metadata';
+import { breadcrumbSchema, jsonLd } from '@/lib/seo';
 
 export const metadata = buildMetadata({
-  title: 'Astrology Insights',
+  title: 'Astrology Blog — Insights from Pandit Vishwanath Guruji, Bangalore',
   description:
-    "Articles, guidance, and reflections by Pandit Sri Vishwanath Guruji on Vedic astrology and life remedies.",
+    'Read articles, guidance, and reflections from Pandit Sri Vishwanath Guruji on Vedic astrology, Vashikaran, Vastu, Doshas, Marriage, Gemstones, and life remedies — written from the heart of Jayanagar, Bangalore.',
   path: '/blog',
+  keywords: [
+    'vedic astrology blog Bangalore',
+    'astrology articles by Vishwanath Guruji',
+    'kaal sarp dosh blog',
+    'vastu tips Bangalore',
+    'mangal dosh remedies article',
+  ],
 });
 
 export default function BlogPage() {
@@ -17,6 +25,15 @@ export default function BlogPage() {
   const rest = BLOG.filter((p) => p.slug !== featured.slug);
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd(
+          breadcrumbSchema([
+            { label: 'Home', href: '/' },
+            { label: 'Blog', href: '/blog' },
+          ]),
+        )}
+      />
       <PageHero
         title="Astrology Insights"
         breadcrumb={[

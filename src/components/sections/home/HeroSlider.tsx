@@ -16,26 +16,31 @@ const slides = [
     headline: 'Vashikaran & Love Problem Specialist in Bangalore',
     sub: 'Ancient Vedic solutions to bring your loved one back into your life.',
     image: PLACEHOLDER_IMG,
+    alt: 'Best Vashikaran and love problem specialist astrologer in Bangalore — Pandit Sri Vishwanath Guruji',
   },
   {
     headline: 'Black Magic Removal & Protection Rituals',
     sub: 'Break free from dark energies with powerful Tantrik remedies.',
     image: PLACEHOLDER_IMG,
+    alt: 'Trusted black magic removal and Vedic protection rituals in Bangalore by Vishwanath Guruji',
   },
   {
     headline: 'Vastu Shastra & Home Harmony Solutions',
     sub: 'Transform your living space into a sanctuary of positive energy.',
     image: PLACEHOLDER_IMG,
+    alt: 'Experienced Vastu Shastra consultant in Bangalore — home and office harmony solutions',
   },
   {
     headline: 'Career, Finance & Business Problem Resolution',
     sub: 'Unlock your true potential with planetary alignment guidance.',
     image: PLACEHOLDER_IMG,
+    alt: 'Career, finance, and business problem solution astrologer in Bangalore — Sri Panchamukhi Astro Centre',
   },
   {
     headline: 'Special Pujas & Sacred Rituals for Your Wellbeing',
     sub: 'Sacred fire ceremonies performed with ancient Vedic precision.',
     image: PLACEHOLDER_IMG,
+    alt: 'Authentic Vedic pujas and homa rituals performed by Pandit Vishwanath Guruji in Jayanagar, Bangalore',
   },
 ];
 
@@ -56,7 +61,7 @@ export default function HeroSlider() {
             <div className="relative w-full h-full">
               <Image
                 src={s.image}
-                alt=""
+                alt={s.alt}
                 fill
                 priority={i === 0}
                 className="object-cover"

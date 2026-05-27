@@ -7,6 +7,7 @@ import { BLOG, getBlogBySlug } from '@/constants/blog';
 import { buildMetadata } from '@/lib/metadata';
 import { formatDate } from '@/lib/utils';
 import GlobalClosingCta from '@/components/sections/shared/GlobalClosingCta';
+import { articleSchema, breadcrumbSchema, jsonLd } from '@/lib/seo';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -24,6 +25,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: post.title,
     description: post.excerpt,
     path: `/blog/${post.slug}`,
+    image: post.image,
+    type: 'article',
+    publishedTime: post.date,
+    modifiedTime: post.date,
+    keywords: [
+      post.category.toLowerCase(),
+      `${post.category.toLowerCase()} Bangalore`,
+      'vedic astrology article',
+      'pandit Vishwanath Guruji',
+    ],
   });
 }
 
@@ -33,17 +44,20 @@ export default async function BlogPostPage({ params }: PageProps) {
   if (!post) notFound();
   const recent = BLOG.filter((p) => p.slug !== post.slug).slice(0, 4);
 
+  const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Blog', href: '/blog' },
+    { label: post.title, href: `/blog/${post.slug}` },
+  ];
+
   return (
     <>
-      <PageHero
-        title={post.title}
-        breadcrumb={[
-          { label: 'Home', href: '/' },
-          { label: 'Blog', href: '/blog' },
-          { label: post.title, href: `/blog/${post.slug}` },
-        ]}
-        backgroundImage={post.image}
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(articleSchema(post))} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd(breadcrumbSchema(breadcrumbs))}
       />
+      <PageHero title={post.title} breadcrumb={breadcrumbs} backgroundImage={post.image} />
       <section className="bg-site-bg py-16 md:py-20">
         <div className="max-w-container mx-auto px-6 grid lg:grid-cols-[1fr_320px] gap-12">
           <article>
@@ -54,7 +68,13 @@ export default async function BlogPostPage({ params }: PageProps) {
               {post.title}
             </h1>
             <div className="relative aspect-[16/9] rounded-md overflow-hidden mb-8">
-              <Image src={post.image} alt={post.title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 66vw" />
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 66vw"
+              />
             </div>
             <div className="prose prose-neutral max-w-none text-site-text-muted leading-relaxed whitespace-pre-line">
               {post.content}

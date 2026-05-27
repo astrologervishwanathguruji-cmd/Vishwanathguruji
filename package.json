@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "postbuild": "next-sitemap"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -16,7 +15,6 @@
     "framer-motion": "^11.3.19",
     "lucide-react": "^0.414.0",
     "next": "16.2.6",
-    "next-sitemap": "^4.2.3",
     "react": "19.2.6",
     "react-dom": "19.2.6",
     "react-hook-form": "^7.52.1",

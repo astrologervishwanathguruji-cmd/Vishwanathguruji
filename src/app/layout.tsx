@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import {
   Playfair_Display,
   DM_Sans,
@@ -11,6 +11,13 @@ import Footer from '@/components/layout/Footer';
 import FloatingButtons from '@/components/layout/FloatingButtons';
 import BackToTop from '@/components/ui/BackToTop';
 import { SITE_CONFIG } from '@/constants/siteConfig';
+import {
+  localBusinessSchema,
+  organizationSchema,
+  personSchema,
+  websiteSchema,
+  jsonLd,
+} from '@/lib/seo';
 import './globals.css';
 
 const playfair = Playfair_Display({
@@ -36,61 +43,105 @@ const kannada = Noto_Serif_Kannada({
   weight: ['400', '600'],
 });
 
+const SITE_DEFAULT_TITLE = `${SITE_CONFIG.guruji} | Best Astrologer in Bangalore | ${SITE_CONFIG.name}`;
+const SITE_DEFAULT_DESCRIPTION =
+  'Pandit Sri Vishwanath Guruji is the best Vedic astrologer in Bangalore with 35+ years of experience. Expert Vashikaran, Black Magic Removal, Vastu Shastra, marriage, love, career, family, health, and financial problem solutions at Sri Panchamukhi Astro Centre, Jayanagar — serving Bangalore, Karnataka, and clients across India.';
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.siteUrl),
   title: {
-    default: `${SITE_CONFIG.name} | Pandit Vishwanath Guruji Bangalore`,
+    default: SITE_DEFAULT_TITLE,
     template: `%s | ${SITE_CONFIG.name}`,
   },
-  description:
-    "Pandit Sri Vishwanath Guruji, Bangalore's most trusted Vedic astrologer with 35+ years of experience. Expert in Vashikaran, Black Magic Removal, Vastu Shastra, and life problem solutions.",
-  keywords: [
-    'astrologer bangalore',
-    'vishwanath guruji',
-    'vashikaran specialist',
-    'black magic removal bangalore',
-    'vedic astrology jayanagar',
-    'panchamukhi astro centre',
-  ],
+  description: SITE_DEFAULT_DESCRIPTION,
+  applicationName: SITE_CONFIG.name,
+  keywords: SITE_CONFIG.primaryKeywords,
+  authors: [{ name: SITE_CONFIG.guruji, url: SITE_CONFIG.siteUrl }],
+  creator: SITE_CONFIG.guruji,
+  publisher: SITE_CONFIG.name,
+  category: 'Vedic Astrology',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
-    locale: 'en_IN',
+    locale: SITE_CONFIG.locale,
     siteName: SITE_CONFIG.name,
     url: SITE_CONFIG.siteUrl,
+    title: SITE_DEFAULT_TITLE,
+    description: SITE_DEFAULT_DESCRIPTION,
+    images: [
+      {
+        url: SITE_CONFIG.defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: `${SITE_CONFIG.guruji} — ${SITE_CONFIG.name}`,
+      },
+    ],
   },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_DEFAULT_TITLE,
+    description: SITE_DEFAULT_DESCRIPTION,
+    images: [SITE_CONFIG.defaultOgImage],
+    site: SITE_CONFIG.twitterHandle,
+    creator: SITE_CONFIG.twitterHandle,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+  icons: {
+    icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
+  },
+  manifest: '/site.webmanifest',
+  verification: {
+    google: SITE_CONFIG.verification.google || undefined,
+    yandex: SITE_CONFIG.verification.yandex || undefined,
+    other: SITE_CONFIG.verification.bing
+      ? { 'msvalidate.01': SITE_CONFIG.verification.bing }
+      : undefined,
+  },
+  formatDetection: {
+    telephone: true,
+    address: true,
+    email: true,
+  },
 };
 
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: SITE_CONFIG.name,
-  description: 'Vedic astrology and spiritual healing services',
-  url: SITE_CONFIG.siteUrl,
-  telephone: SITE_CONFIG.phone,
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '#2004 South End E Cross, Near Sri Ragigudda Temple, Jayanagar 9th Block',
-    addressLocality: 'Bengaluru',
-    postalCode: '560069',
-    addressCountry: 'IN',
-  },
-  geo: { '@type': 'GeoCoordinates', latitude: 12.9252, longitude: 77.5945 },
-  openingHours: 'Mo-Su 09:00-20:00',
-  priceRange: '$$',
+export const viewport: Viewport = {
+  themeColor: SITE_CONFIG.themeColor,
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
-      lang="en"
+      lang={SITE_CONFIG.language}
       className={`${playfair.variable} ${dmSans.variable} ${devanagari.variable} ${kannada.variable}`}
     >
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+          dangerouslySetInnerHTML={jsonLd(organizationSchema())}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={jsonLd(localBusinessSchema())}
+        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(personSchema())} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(websiteSchema())} />
       </head>
       <body>
         <Navbar />
