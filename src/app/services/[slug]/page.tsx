@@ -8,6 +8,8 @@ import ServiceCTABand from '@/components/sections/service-detail/ServiceCTABand'
 import DividerOrnament from '@/components/ui/DividerOrnament';
 import { SERVICES, getServiceBySlug } from '@/constants/services';
 import { buildMetadata } from '@/lib/metadata';
+import { breadcrumbSchema, faqSchema, jsonLd, serviceSchema } from '@/lib/seo';
+import { SITE_CONFIG } from '@/constants/siteConfig';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -21,10 +23,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const service = getServiceBySlug(slug);
   if (!service) return { title: 'Service not found' };
+  const title = `${service.title} in Bangalore — ${SITE_CONFIG.guruji}`;
+  const description = `${service.shortDescription} Trusted Vedic remedies by Pandit Sri Vishwanath Guruji at Sri Panchamukhi Astro Centre, Jayanagar, Bangalore.`;
   return buildMetadata({
-    title: service.title,
-    description: service.shortDescription,
+    title,
+    description,
     path: `/services/${service.slug}`,
+    image: service.heroImage,
+    keywords: [
+      `${service.title} in Bangalore`,
+      `${service.title} specialist`,
+      `best astrologer for ${service.title} Bangalore`,
+      `${service.title} Jayanagar`,
+    ],
   });
 }
 
@@ -33,15 +44,29 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   const service = getServiceBySlug(slug);
   if (!service) notFound();
 
+  const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Services', href: '/services' },
+    { label: service.title, href: `/services/${service.slug}` },
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd(serviceSchema(service))}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd(faqSchema(service.faq))}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd(breadcrumbSchema(breadcrumbs))}
+      />
       <PageHero
         title={service.title}
-        breadcrumb={[
-          { label: 'Home', href: '/' },
-          { label: 'Services', href: '/services' },
-          { label: service.title, href: `/services/${service.slug}` },
-        ]}
+        breadcrumb={breadcrumbs}
         backgroundImage={service.heroImage}
       />
       <section className="bg-site-bg py-16 md:py-20">
