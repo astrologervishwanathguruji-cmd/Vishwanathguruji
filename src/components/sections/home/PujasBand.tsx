@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import { PUJAS } from '@/constants/pujas';
-import { PLACEHOLDER_IMG } from '@/constants/siteConfig';
+import { IMG } from '@/constants/images';
 
 export default function PujasBand() {
   const featured = PUJAS.slice(0, 4);
@@ -41,7 +41,7 @@ export default function PujasBand() {
           <div className="absolute inset-3 border-2 border-accent pointer-events-none" aria-hidden />
           <div className="relative aspect-[4/3] overflow-hidden">
             <Image
-              src={PLACEHOLDER_IMG}
+              src={IMG.homeTrust}
               alt="Sacred havan ceremony"
               fill
               className="object-cover"

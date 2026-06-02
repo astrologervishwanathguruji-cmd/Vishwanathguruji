@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { PLACEHOLDER_IMG } from '@/constants/siteConfig';
+import { IMG } from '@/constants/images';
 
 const credentials = [
   '35+ Years Experience',
@@ -26,7 +26,7 @@ export default function AboutSummary() {
           <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent" aria-hidden />
           <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
             <Image
-              src={PLACEHOLDER_IMG}
+              src={IMG.gurujiSelfie}
               alt="Pandit Sri Vishwanath Guruji"
               fill
               className="object-cover"

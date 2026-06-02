@@ -1,5 +1,5 @@
 import type { Service } from '@/types';
-import { PLACEHOLDER_IMG } from './siteConfig';
+import { IMG } from './images';
 
 const baseProcess = [
   { step: 1, title: 'Initial Consultation', description: 'Guruji assesses your birth chart, planetary positions, and the symptoms you are experiencing.' },
@@ -15,7 +15,7 @@ export const SERVICES: Service[] = [
     shortDescription: 'Ancient protective rituals to break negative energies and dark forces.',
     fullContent:
       'Black magic, voodoo, and dark tantric forces can disrupt every dimension of life, health, relationships, finances, and peace of mind. Pandit Sri Vishwanath Guruji has spent over three decades mastering the counter-rituals from the Atharva Veda and Tantra Shastra to neutralise these influences. Through diagnosis of your birth chart and the symptoms you describe, Guruji identifies the source and intensity of the negativity. Sacred yantras are then prepared, protective mantras are recited over multiple sittings, and personalised remedial pujas are performed at the centre. Every ritual is conducted with strict adherence to Vedic procedure, guaranteeing your safety and complete spiritual cleansing.',
-    heroImage: PLACEHOLDER_IMG,
+    heroImage: IMG.svc.magic,
     icon: 'Shield',
     faq: [
       { question: 'How do I know if I am affected by black magic?', answer: 'Common signs include unexplained illness, recurring nightmares, sudden financial collapse, family discord without cause, and a persistent feeling of being watched or drained. Guruji confirms it through your birth chart and a personal reading.' },
@@ -38,7 +38,7 @@ export const SERVICES: Service[] = [
     shortDescription: 'Vedic Vashikaran techniques to resolve love and relationship issues.',
     fullContent:
       'Vashikaran is one of the most ancient and refined branches of Vedic astrology, the art of harmonising minds and attracting positive intent. Guruji applies it strictly for ethical purposes: reuniting separated lovers, healing strained marriages, restoring a wandering partner\'s affection, and resolving stubborn family disputes. Every Vashikaran ritual draws upon classical mantras, sacred yantras, and the alignment of Venus and Moon in your chart.',
-    heroImage: PLACEHOLDER_IMG,
+    heroImage: IMG.svc.love,
     icon: 'Heart',
     faq: [
       { question: 'Is Vashikaran ethical?', answer: 'Guruji practises only positive Vashikaran, never to harm, control, or manipulate against another\'s wellbeing. The purpose is restoration of natural affection.' },
@@ -61,7 +61,7 @@ export const SERVICES: Service[] = [
     shortDescription: 'Harmonise your home and workplace energies through ancient Vastu principles.',
     fullContent:
       'Vastu Shastra is the sacred Vedic science of architecture, aligning your living and working spaces with the five elements and the cardinal directions. Even a small structural imbalance can block prosperity, peace, and health. Guruji conducts on-site Vastu surveys across Bangalore, identifies dosha zones, and prescribes corrections that range from simple yantra placement to pyramidal cures and re-orientation of key rooms.',
-    heroImage: PLACEHOLDER_IMG,
+    heroImage: IMG.svc.vastu,
     icon: 'Home',
     faq: [
       { question: 'Do I need to demolish my house?', answer: 'Almost never. 95% of Vastu doshas can be corrected with placement-based remedies, yantras, and minor adjustments.' },
@@ -84,7 +84,7 @@ export const SERVICES: Service[] = [
     shortDescription: 'Astrological solutions to remove obstacles in love marriages.',
     fullContent:
       'Love marriages in Indian families often face caste, community, financial, or astrological hurdles. Guruji studies the birth charts of both partners, identifies the doshas blocking parental approval and inter-family harmony, and recommends targeted Vedic remedies, from kuja-dosha nivaran to specific pujas that soften family resistance.',
-    heroImage: PLACEHOLDER_IMG,
+    heroImage: IMG.svc.love,
     icon: 'Heart',
     faq: [
       { question: 'Can astrology really change my parents\' minds?', answer: 'Astrology shifts the energetic conditions around a situation. With the right pujas, family resistance often softens within weeks.' },
@@ -107,7 +107,7 @@ export const SERVICES: Service[] = [
     shortDescription: 'Sacred rituals and Vedic remedies for couples seeking children.',
     fullContent:
       'Santaan dosha (childlessness) is one of the most painful experiences for a couple. Guruji combines deep horoscope analysis with proven Vedic remedies, Santaan Gopal Mantra anushthan, Putra-Kameshti Yagya, and specialised pujas at sacred shrines, to remove planetary blocks and invoke divine blessings for healthy progeny.',
-    heroImage: PLACEHOLDER_IMG,
+    heroImage: IMG.svc.child,
     icon: 'Baby',
     faq: [
       { question: 'How long until results?', answer: 'Most couples see medical and spiritual changes within a 6 to 12-month cycle of remedies.' },
@@ -130,7 +130,7 @@ export const SERVICES: Service[] = [
     shortDescription: 'Restore peace, trust, and harmony in your marriage.',
     fullContent:
       'A marriage strained by misunderstandings, distance, or mistrust can almost always be restored. Guruji studies both partners\' charts to find the planetary trigger of the discord, often Mars, Saturn, or Rahu, and prescribes targeted remedies: shanti pujas, mantra anushthan, and behavioural guidance rooted in Vedic counselling.',
-    heroImage: PLACEHOLDER_IMG,
+    heroImage: IMG.svc.couple,
     icon: 'Users',
     faq: [
       { question: 'My partner refuses to come for consultation. Can you still help?', answer: 'Yes, Guruji can perform remedies based on one partner\'s consent and chart. The harmony returns naturally.' },
@@ -153,7 +153,7 @@ export const SERVICES: Service[] = [
     shortDescription: 'Resolve family disputes, estrangements, and conflicts through astrology.',
     fullContent:
       'Joint family disputes, property quarrels, brother-sister rifts, mother-in-law tensions, often stem from planetary doshas and ancestral karma. Guruji identifies the pitru dosha or graha kalesh active in the family chart and prescribes Pitru Tarpan, Rudra Abhishek, and other shanti remedies to restore harmony across generations.',
-    heroImage: PLACEHOLDER_IMG,
+    heroImage: IMG.svc.family,
     icon: 'Users',
     faq: [
       { question: 'Why do families fight constantly?', answer: 'Often the root is pitru dosha or a malefic Saturn-Rahu interplay. Vedic remedies clear these unseen burdens.' },
@@ -176,7 +176,7 @@ export const SERVICES: Service[] = [
     shortDescription: 'Vedic remedies to overcome chronic illness and health obstacles.',
     fullContent:
       'Chronic illness that resists medical treatment often has a planetary root, most commonly a malefic Saturn, Rahu, or 6th-house affliction. Guruji performs Maha Mrityunjaya Jaap, Navagraha Shanti pujas, and personalised mantra anushthans to neutralise the planetary cause while medical treatment continues in parallel.',
-    heroImage: PLACEHOLDER_IMG,
+    heroImage: IMG.svc.health,
     icon: 'Activity',
     faq: [
       { question: 'Should I stop my medication?', answer: 'Never. Vedic remedies work alongside, never instead of, your prescribed medical treatment.' },
@@ -199,7 +199,7 @@ export const SERVICES: Service[] = [
     shortDescription: 'Astrological guidance to unlock career growth and professional success.',
     fullContent:
       'Stuck in the same role for years? Missed promotions? Frequent job changes? Career stagnation has clear astrological signatures, typically weak 10th house, malefic Saturn, or unstable Mercury. Guruji prescribes targeted gemstone therapy, planetary remedies, and career-specific yantras to align your professional path with your destiny.',
-    heroImage: PLACEHOLDER_IMG,
+    heroImage: IMG.svc.career,
     icon: 'Briefcase',
     faq: [
       { question: 'Should I change jobs?', answer: 'Guruji studies your dasha cycle and recommends precisely when to change, when to stay, and what industry suits your chart.' },
@@ -222,7 +222,7 @@ export const SERVICES: Service[] = [
     shortDescription: 'Save your marriage or navigate separation with astrological clarity.',
     fullContent:
       'Whether you wish to save your marriage or are navigating an unavoidable separation, Guruji provides clear, ethical astrological counsel. For salvageable marriages, targeted shanti pujas and Vashikaran remedies restore affection. For separations, he guides on auspicious timing and remedies to minimise legal and emotional damage.',
-    heroImage: PLACEHOLDER_IMG,
+    heroImage: IMG.svc.couple,
     icon: 'Scale',
     faq: [
       { question: 'Can my marriage truly be saved?', answer: 'In most cases, yes, even when separation seems inevitable. The planetary cause can almost always be addressed.' },
@@ -245,7 +245,7 @@ export const SERVICES: Service[] = [
     shortDescription: 'Planetary remedies to tip justice in your favour.',
     fullContent:
       'Long-running court cases, civil, criminal, or property, often correlate with afflictions in the 6th and 8th houses. Guruji performs specialised Bagalamukhi pujas, Saturn shanti remedies, and Hanuman Chalisa anushthans to clear the planetary obstruction and bring favourable verdicts.',
-    heroImage: PLACEHOLDER_IMG,
+    heroImage: IMG.svc.court,
     icon: 'Gavel',
     faq: [
       { question: 'Can astrology really influence a court case?', answer: 'Astrology cannot bribe judges, but it removes the karmic obstacles that delay justice and clouds favourable evidence.' },
@@ -268,7 +268,7 @@ export const SERVICES: Service[] = [
     shortDescription: 'Remove financial blocks and attract prosperity through Vedic astrology.',
     fullContent:
       'Money flows where planets align. A weak 2nd or 11th house, malefic Jupiter, or blocked Lakshmi-Kubera energy creates persistent financial struggle no matter how hard you work. Guruji prescribes Lakshmi-Kubera pujas, gemstone remedies, and specific yantras to open the flow of wealth in your life.',
-    heroImage: PLACEHOLDER_IMG,
+    heroImage: IMG.svc.finance,
     icon: 'IndianRupee',
     faq: [
       { question: 'I work hard but money never stays. Why?', answer: 'Likely a leakage in your 2nd or 12th house. Guruji identifies it and prescribes the exact remedy.' },
@@ -291,7 +291,7 @@ export const SERVICES: Service[] = [
     shortDescription: 'Strategic astrological counsel for political careers and elections.',
     fullContent:
       'Political success requires planetary backing, strong Sun, supportive Mercury, and well-placed Mars. Guruji has counselled candidates across Karnataka and beyond on election timing, alliance choices, and ritual remedies to ensure public favour and electoral victory.',
-    heroImage: PLACEHOLDER_IMG,
+    heroImage: IMG.svc.political,
     icon: 'Landmark',
     faq: [
       { question: 'Can astrology predict election results?', answer: 'It can read tendencies and warn of obstacles. Guruji combines this with remedial pujas to strengthen your position.' },

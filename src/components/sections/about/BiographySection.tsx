@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { PLACEHOLDER_IMG } from '@/constants/siteConfig';
+import { IMG } from '@/constants/images';
 
 const paragraphs = [
   "Born into a lineage of Vedic scholars and trained from an early age in the classical Sanskrit corpus, Pandit Sri Vishwanath Guruji established Sri Panchamukhi Astro Centre in Jayanagar, Bangalore, in 1989, at a time when authentic Vedic counsel was becoming increasingly rare in urban India.",
@@ -15,7 +15,7 @@ export default function BiographySection() {
           <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent" aria-hidden />
           <div className="relative aspect-[4/5] overflow-hidden">
             <Image
-              src={PLACEHOLDER_IMG}
+              src={IMG.guruji}
               alt="Pandit Sri Vishwanath Guruji"
               fill
               className="object-cover"

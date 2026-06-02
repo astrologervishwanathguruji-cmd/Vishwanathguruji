@@ -1,59 +1,80 @@
 'use client';
 
+import { useRef } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
+import type { Swiper as SwiperInstance } from 'swiper';
 import { ChevronLeft, ChevronRight, MoveDown } from 'lucide-react';
 import Button from '@/components/ui/Button';
-import { PLACEHOLDER_IMG } from '@/constants/siteConfig';
+import { IMG } from '@/constants/images';
 
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const slides = [
   {
     headline: 'Vashikaran & Love Problem Specialist in Bangalore',
     sub: 'Ancient Vedic solutions to bring your loved one back into your life.',
-    image: PLACEHOLDER_IMG,
+    image: IMG.hero.love,
     alt: 'Best Vashikaran and love problem specialist astrologer in Bangalore — Pandit Sri Vishwanath Guruji',
   },
   {
     headline: 'Black Magic Removal & Protection Rituals',
     sub: 'Break free from dark energies with powerful Tantrik remedies.',
-    image: PLACEHOLDER_IMG,
+    image: IMG.hero.magic,
     alt: 'Trusted black magic removal and Vedic protection rituals in Bangalore by Vishwanath Guruji',
   },
   {
     headline: 'Vastu Shastra & Home Harmony Solutions',
     sub: 'Transform your living space into a sanctuary of positive energy.',
-    image: PLACEHOLDER_IMG,
+    image: IMG.hero.vastu,
     alt: 'Experienced Vastu Shastra consultant in Bangalore — home and office harmony solutions',
   },
   {
     headline: 'Career, Finance & Business Problem Resolution',
     sub: 'Unlock your true potential with planetary alignment guidance.',
-    image: PLACEHOLDER_IMG,
+    image: IMG.hero.career,
     alt: 'Career, finance, and business problem solution astrologer in Bangalore — Sri Panchamukhi Astro Centre',
   },
   {
     headline: 'Special Pujas & Sacred Rituals for Your Wellbeing',
     sub: 'Sacred fire ceremonies performed with ancient Vedic precision.',
-    image: PLACEHOLDER_IMG,
+    image: IMG.hero.puja,
     alt: 'Authentic Vedic pujas and homa rituals performed by Pandit Vishwanath Guruji in Jayanagar, Bangalore',
   },
 ];
 
 export default function HeroSlider() {
+  const swiperRef = useRef<SwiperInstance | null>(null);
+  const paginationRef = useRef<HTMLDivElement>(null);
+
   return (
     <section className="relative w-full h-[88vh] min-h-[560px] bg-site-dark-band overflow-hidden">
       <Swiper
-        modules={[Autoplay, Navigation, Pagination]}
+        modules={[Autoplay, Pagination]}
         speed={950}
         autoplay={{ delay: 5500, disableOnInteraction: false }}
         loop
-        navigation={{ prevEl: '.hero-prev', nextEl: '.hero-next' }}
-        pagination={{ clickable: true, el: '.hero-pagination', bulletClass: 'hero-dot', bulletActiveClass: 'hero-dot--active' }}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+        onBeforeInit={(swiper) => {
+          if (typeof swiper.params.pagination === 'object' && swiper.params.pagination) {
+            swiper.params.pagination.el = paginationRef.current;
+          }
+        }}
+        onInit={(swiper) => {
+          swiper.pagination.init();
+          swiper.pagination.render();
+          swiper.pagination.update();
+        }}
+        pagination={{
+          clickable: true,
+          el: paginationRef.current,
+          bulletClass: 'hero-dot',
+          bulletActiveClass: 'hero-dot--active',
+        }}
         className="hero-swiper h-full"
       >
         {slides.map((s, i) => (
@@ -98,20 +119,25 @@ export default function HeroSlider() {
 
       <button
         type="button"
-        className="hero-prev hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/40 backdrop-blur-sm border border-site-white/20 text-site-white items-center justify-center hover:bg-primary transition-colors"
+        className="hero-prev hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 backdrop-blur-sm border border-site-white/20 text-site-white items-center justify-center hover:bg-primary transition-colors pointer-events-auto"
         aria-label="Previous slide"
+        onClick={() => swiperRef.current?.slidePrev()}
       >
         <ChevronLeft size={22} />
       </button>
       <button
         type="button"
-        className="hero-next hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/40 backdrop-blur-sm border border-site-white/20 text-site-white items-center justify-center hover:bg-primary transition-colors"
+        className="hero-next hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 backdrop-blur-sm border border-site-white/20 text-site-white items-center justify-center hover:bg-primary transition-colors pointer-events-auto"
         aria-label="Next slide"
+        onClick={() => swiperRef.current?.slideNext()}
       >
         <ChevronRight size={22} />
       </button>
 
-      <div className="hero-pagination absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2" />
+      <div
+        ref={paginationRef}
+        className="hero-pagination absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 pointer-events-auto"
+      />
 
       <div className="absolute bottom-6 right-6 hidden md:flex items-center gap-2 text-site-white/70 text-xs tracking-widest uppercase animate-bob">
         <span>Scroll</span>

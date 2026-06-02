@@ -1,0 +1,42 @@
+/** Short, stable paths for assets under public/images and public/videos */
+export const IMG = {
+  hero: {
+    love: '/images/hero-love.jpg',
+    magic: '/images/hero-magic.jpg',
+    vastu: '/images/hero-vastu.jpg',
+    career: '/images/hero-career.jpg',
+    puja: '/images/hero-puja.jpg',
+  },
+  guruji: '/images/guruji.jpg',
+  gurujiSelfie: '/images/guruji-selfie.jpg',
+  homeConsult: '/images/home-consult.jpg',
+  homeTrust: '/images/home-trust.jpg',
+  svc: {
+    magic: '/images/svc-magic.jpg',
+    love: '/images/svc-love.jpg',
+    vastu: '/images/svc-vastu.jpg',
+    child: '/images/svc-child.jpg',
+    couple: '/images/svc-couple.jpg',
+    health: '/images/svc-health.jpg',
+    career: '/images/svc-career.jpg',
+    family: '/images/svc-family.jpg',
+    court: '/images/svc-court.jpg',
+    finance: '/images/svc-finance.jpg',
+    political: '/images/svc-political.jpg',
+  },
+  puja: {
+    maha: '/images/puja-maha.jpg',
+    nav: '/images/puja-nav.jpg',
+    durga: '/images/puja-durga.jpg',
+    kaal: '/images/puja-kaal.jpg',
+    lakshmi: '/images/puja-lakshmi.jpg',
+  },
+  gallery: (n: number) =>
+    `/images/gallery-${String(n).padStart(2, '0')}.jpg` as `/images/gallery-${string}.jpg`,
+  video: {
+    v1: '/videos/video-1.mp4',
+    v2: '/videos/video-2.mp4',
+    v3: '/videos/video-3.mp4',
+    v4: '/videos/video-4.mp4',
+  },
+} as const;

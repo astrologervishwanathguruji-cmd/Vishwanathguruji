@@ -1,5 +1,5 @@
 import type { BlogPost } from '@/types';
-import { PLACEHOLDER_IMG } from './siteConfig';
+import { IMG } from './images';
 
 const longBody = `Vedic astrology is far more than a system of prediction, it is a contemplative science of timing, karma, and self-knowledge. In this article, Pandit Sri Vishwanath Guruji explains the foundational principles every seeker should understand before approaching the shastra.
 
@@ -14,7 +14,7 @@ export const BLOG: BlogPost[] = [
     excerpt:
       'A beginner-friendly introduction to janma kundali, dasha cycles, and the philosophy of remedy by Pandit Sri Vishwanath Guruji.',
     date: '2026-02-14',
-    image: PLACEHOLDER_IMG,
+    image: IMG.guruji,
     category: 'Astrology Basics',
     content: longBody,
     featured: true,
@@ -25,7 +25,7 @@ export const BLOG: BlogPost[] = [
     excerpt:
       'Disturbed sleep, sudden quarrels, unexplained illness, Guruji explains the early warning signals and what to do about them.',
     date: '2026-01-22',
-    image: PLACEHOLDER_IMG,
+    image: IMG.hero.magic,
     category: 'Protection',
     content: longBody,
     featured: false,
@@ -36,7 +36,7 @@ export const BLOG: BlogPost[] = [
     excerpt:
       'Small placement changes that align your home with the five elements, no demolition required.',
     date: '2025-12-30',
-    image: PLACEHOLDER_IMG,
+    image: IMG.hero.vastu,
     category: 'Vastu Shastra',
     content: longBody,
     featured: false,
@@ -47,7 +47,7 @@ export const BLOG: BlogPost[] = [
     excerpt:
       'A clear explanation of one of the most feared planetary configurations, and the proven remedies that resolve it.',
     date: '2025-11-18',
-    image: PLACEHOLDER_IMG,
+    image: IMG.puja.kaal,
     category: 'Doshas',
     content: longBody,
     featured: false,
@@ -58,7 +58,7 @@ export const BLOG: BlogPost[] = [
     excerpt:
       'Why a wrongly chosen gemstone can harm, and how Guruji prescribes the correct stone, weight, and timing for each client.',
     date: '2025-10-04',
-    image: PLACEHOLDER_IMG,
+    image: IMG.gallery(4),
     category: 'Remedies',
     content: longBody,
     featured: false,
@@ -69,7 +69,7 @@ export const BLOG: BlogPost[] = [
     excerpt:
       'Mangalik or not? Guruji separates myth from reality and explains the legitimate Vedic remedies that resolve Mars-related concerns.',
     date: '2025-09-11',
-    image: PLACEHOLDER_IMG,
+    image: IMG.svc.love,
     category: 'Marriage',
     content: longBody,
     featured: false,
@@ -80,7 +80,7 @@ export const BLOG: BlogPost[] = [
     excerpt:
       'When generations of quarrels seem to have no rational cause, ancestral dosha may be at work. Here\'s what to do.',
     date: '2025-08-02',
-    image: PLACEHOLDER_IMG,
+    image: IMG.svc.family,
     category: 'Family',
     content: longBody,
     featured: false,

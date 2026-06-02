@@ -1,31 +1,32 @@
 import type { GalleryImage } from '@/types';
-import { PLACEHOLDER_IMG } from './siteConfig';
+import { IMG } from './images';
 
 const make = (
   id: string,
+  src: string,
   category: GalleryImage['category'],
   alt: string,
   width = 800,
   height = 1000,
-): GalleryImage => ({ id, src: PLACEHOLDER_IMG, alt, category, width, height });
+): GalleryImage => ({ id, src, alt, category, width, height });
 
 export const GALLERY: GalleryImage[] = [
-  make('g1', 'events', 'Annual gathering at Sri Panchamukhi Astro Centre'),
-  make('g2', 'pujas', 'Sacred Maha Mrityunjaya havan ceremony', 800, 600),
-  make('g3', 'consultations', 'Guruji consulting a client at the centre', 800, 1100),
-  make('g4', 'media', 'Press feature on Pandit Vishwanath Guruji', 800, 600),
-  make('g5', 'ceremonies', 'Navagraha shanti ceremony', 800, 800),
-  make('g6', 'pujas', 'Durga Saptashati recitation', 800, 1000),
-  make('g7', 'events', 'Devotee gathering during Navaratri'),
-  make('g8', 'consultations', 'Vastu site visit reading', 800, 600),
-  make('g9', 'ceremonies', 'Kaal Sarp Dosh Nivaran at sacred shrine', 800, 1100),
-  make('g10', 'media', 'Television interview with Guruji', 800, 600),
-  make('g11', 'pujas', 'Lakshmi-Kubera puja preparations', 800, 900),
-  make('g12', 'events', 'Free annual community puja'),
-  make('g13', 'consultations', 'Birth chart analysis session', 800, 600),
-  make('g14', 'ceremonies', 'Maha Rudra Abhishek ritual', 800, 1000),
-  make('g15', 'pujas', 'Havan kunda being prepared', 800, 600),
-  make('g16', 'events', 'Guruji blessing devotees', 800, 1100),
+  make('g1', IMG.gallery(1), 'events', 'Annual gathering at Sri Panchamukhi Astro Centre'),
+  make('g2', IMG.gallery(8), 'pujas', 'Sacred Maha Mrityunjaya havan ceremony', 800, 600),
+  make('g3', IMG.gallery(11), 'consultations', 'Guruji consulting a client at the centre', 800, 1100),
+  make('g4', IMG.gallery(13), 'media', 'Press feature on Pandit Vishwanath Guruji', 800, 600),
+  make('g5', IMG.puja.nav, 'ceremonies', 'Navagraha shanti ceremony', 800, 800),
+  make('g6', IMG.puja.durga, 'pujas', 'Durga Saptashati recitation', 800, 1000),
+  make('g7', IMG.gallery(5), 'events', 'Devotee gathering during Navaratri'),
+  make('g8', IMG.hero.vastu, 'consultations', 'Vastu site visit reading', 800, 600),
+  make('g9', IMG.puja.kaal, 'ceremonies', 'Kaal Sarp Dosh Nivaran at sacred shrine', 800, 1100),
+  make('g10', IMG.gallery(7), 'media', 'Television interview with Guruji', 800, 600),
+  make('g11', IMG.puja.lakshmi, 'pujas', 'Lakshmi-Kubera puja preparations', 800, 900),
+  make('g12', IMG.gallery(15), 'events', 'Free annual community puja'),
+  make('g13', IMG.gallery(6), 'consultations', 'Birth chart analysis session', 800, 600),
+  make('g14', IMG.gallery(10), 'ceremonies', 'Maha Rudra Abhishek ritual', 800, 1000),
+  make('g15', IMG.puja.maha, 'pujas', 'Havan kunda being prepared', 800, 600),
+  make('g16', IMG.gurujiSelfie, 'events', 'Guruji blessing devotees', 800, 1100),
 ];
 
 export const GALLERY_CATEGORIES: { key: GalleryImage['category'] | 'all'; label: string }[] = [
@@ -38,8 +39,28 @@ export const GALLERY_CATEGORIES: { key: GalleryImage['category'] | 'all'; label:
 ];
 
 export const VIDEO_GALLERY = [
-  { id: 'v1', title: 'Guruji speaks on Vashikaran & ethics', thumb: PLACEHOLDER_IMG, url: '#' },
-  { id: 'v2', title: 'Maha Mrityunjaya Puja highlights', thumb: PLACEHOLDER_IMG, url: '#' },
-  { id: 'v3', title: 'Vastu Shastra essentials by Guruji', thumb: PLACEHOLDER_IMG, url: '#' },
-  { id: 'v4', title: 'Annual Navaratri ceremony', thumb: PLACEHOLDER_IMG, url: '#' },
+  {
+    id: 'v1',
+    title: 'Guruji speaks on Vashikaran & ethics',
+    thumb: IMG.gallery(14),
+    url: IMG.video.v1,
+  },
+  {
+    id: 'v2',
+    title: 'Maha Mrityunjaya Puja highlights',
+    thumb: IMG.puja.maha,
+    url: IMG.video.v2,
+  },
+  {
+    id: 'v3',
+    title: 'Vastu Shastra essentials by Guruji',
+    thumb: IMG.hero.vastu,
+    url: IMG.video.v3,
+  },
+  {
+    id: 'v4',
+    title: 'Annual Navaratri ceremony',
+    thumb: IMG.gallery(15),
+    url: IMG.video.v4,
+  },
 ];

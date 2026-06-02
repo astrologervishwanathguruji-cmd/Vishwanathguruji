@@ -1,5 +1,5 @@
 import type { Puja } from '@/types';
-import { PLACEHOLDER_IMG } from './siteConfig';
+import { IMG } from './images';
 
 export const PUJAS: Puja[] = [
   {
@@ -13,7 +13,7 @@ export const PUJAS: Puja[] = [
       'Removal of fear and anxiety',
       'Longevity for self and loved ones',
     ],
-    image: PLACEHOLDER_IMG,
+    image: IMG.puja.maha,
   },
   {
     slug: 'navgraha-puja',
@@ -26,7 +26,7 @@ export const PUJAS: Puja[] = [
       'Reduces malefic dasha effects',
       'Strengthens benefic planetary influences',
     ],
-    image: PLACEHOLDER_IMG,
+    image: IMG.puja.nav,
   },
   {
     slug: 'durga-saptashati-puja',
@@ -39,7 +39,7 @@ export const PUJAS: Puja[] = [
       'Protection of family and home',
       'Manifestation of unfulfilled desires',
     ],
-    image: PLACEHOLDER_IMG,
+    image: IMG.puja.durga,
   },
   {
     slug: 'kaal-sarp-dosh-nivaran',
@@ -52,7 +52,7 @@ export const PUJAS: Puja[] = [
       'Relief from recurring nightmares',
       'Restoration of natural progress',
     ],
-    image: PLACEHOLDER_IMG,
+    image: IMG.puja.kaal,
   },
   {
     slug: 'lakshmi-kubera-puja',
@@ -65,7 +65,7 @@ export const PUJAS: Puja[] = [
       'Business and investment success',
       'Family abundance and peace',
     ],
-    image: PLACEHOLDER_IMG,
+    image: IMG.puja.lakshmi,
   },
 ];
 
