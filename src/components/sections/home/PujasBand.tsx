@@ -37,17 +37,18 @@ export default function PujasBand() {
           </Button>
         </div>
 
-        <div className="relative">
-          <div className="absolute inset-3 border-2 border-accent pointer-events-none" aria-hidden />
-          <div className="relative aspect-[4/3] overflow-hidden">
-            <Image
-              src={IMG.homeTrust}
-              alt="Sacred havan ceremony"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 40vw"
-            />
-          </div>
+        <div className="relative aspect-[4/3] overflow-hidden rounded-md">
+          <div
+            className="absolute inset-3 border-2 border-accent z-10 pointer-events-none"
+            aria-hidden
+          />
+          <Image
+            src={IMG.homeTrust}
+            alt="Sacred havan ceremony"
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 40vw"
+          />
         </div>
       </div>
     </section>

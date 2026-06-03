@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Star } from 'lucide-react';
 import { cn, formatDate } from '@/lib/utils';
 import { SERVICES } from '@/constants/services';
@@ -73,6 +74,14 @@ export default function TestimonialCard({ testimonial, compact = false }: Testim
             </span>
           )}
         </div>
+        {service && !compact ? (
+          <Link
+            href={`/services/${service.slug}`}
+            className="mt-4 text-sm font-semibold text-accent hover:text-primary transition-colors"
+          >
+            {service.title} →
+          </Link>
+        ) : null}
       </div>
     </article>
   );

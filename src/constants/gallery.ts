@@ -37,30 +37,3 @@ export const GALLERY_CATEGORIES: { key: GalleryImage['category'] | 'all'; label:
   { key: 'media', label: 'Media' },
   { key: 'ceremonies', label: 'Ceremonies' },
 ];
-
-export const VIDEO_GALLERY = [
-  {
-    id: 'v1',
-    title: 'Guruji speaks on Vashikaran & ethics',
-    thumb: IMG.gallery(14),
-    url: IMG.video.v1,
-  },
-  {
-    id: 'v2',
-    title: 'Maha Mrityunjaya Puja highlights',
-    thumb: IMG.puja.maha,
-    url: IMG.video.v2,
-  },
-  {
-    id: 'v3',
-    title: 'Vastu Shastra essentials by Guruji',
-    thumb: IMG.hero.vastu,
-    url: IMG.video.v3,
-  },
-  {
-    id: 'v4',
-    title: 'Annual Navaratri ceremony',
-    thumb: IMG.gallery(15),
-    url: IMG.video.v4,
-  },
-];

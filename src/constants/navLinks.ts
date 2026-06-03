@@ -14,12 +14,12 @@ export const PRIMARY_LINKS_LEFT: NavLink[] = [
 
 export const PRIMARY_LINKS_RIGHT: NavLink[] = [
   { label: 'Gallery', href: '/gallery' },
+  { label: 'Testimonials', href: '/testimonials' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Contact', href: '/contact' },
 ];
 
 export const ALL_NAV_LINKS: NavLink[] = [
   ...PRIMARY_LINKS_LEFT,
   ...PRIMARY_LINKS_RIGHT,
-  { label: 'Testimonials', href: '/testimonials' },
+  { label: 'Contact', href: '/contact' },
 ];

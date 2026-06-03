@@ -1,15 +1,17 @@
 import PageHero from '@/components/ui/PageHero';
 import TestimonialsStatsBand from '@/components/sections/testimonials/TestimonialsStatsBand';
+import TestimonialVideos from '@/components/sections/testimonials/TestimonialVideos';
 import TestimonialsGrid from '@/components/sections/testimonials/TestimonialsGrid';
 import GlobalClosingCta from '@/components/sections/shared/GlobalClosingCta';
 import { buildMetadata } from '@/lib/metadata';
 import { breadcrumbSchema, jsonLd, reviewsSchema } from '@/lib/seo';
 import { TESTIMONIALS } from '@/constants/testimonials';
+import { IMG } from '@/constants/images';
 
 export const metadata = buildMetadata({
   title: 'Client Reviews & Testimonials — Pandit Vishwanath Guruji, Bangalore',
   description:
-    "Read real stories of transformation from Pandit Sri Vishwanath Guruji's clients across Bangalore, Karnataka, India, and the diaspora — marriage, career, family, and protection success stories.",
+    "Watch client video testimonials and read real stories of transformation from Pandit Sri Vishwanath Guruji's clients across Bangalore, Karnataka, India, and the diaspora.",
   path: '/testimonials',
   keywords: [
     'Vishwanath Guruji reviews',
@@ -37,12 +39,14 @@ export default function TestimonialsPage() {
       />
       <PageHero
         title="Client Testimonials"
+        backgroundImage={IMG.guruji}
         breadcrumb={[
           { label: 'Home', href: '/' },
           { label: 'Testimonials', href: '/testimonials' },
         ]}
       />
       <TestimonialsStatsBand />
+      <TestimonialVideos />
       <TestimonialsGrid />
       <GlobalClosingCta />
     </>

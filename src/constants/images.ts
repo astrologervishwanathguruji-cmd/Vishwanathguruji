@@ -33,10 +33,4 @@ export const IMG = {
   },
   gallery: (n: number) =>
     `/images/gallery-${String(n).padStart(2, '0')}.jpg` as `/images/gallery-${string}.jpg`,
-  video: {
-    v1: '/videos/video-1.mp4',
-    v2: '/videos/video-2.mp4',
-    v3: '/videos/video-3.mp4',
-    v4: '/videos/video-4.mp4',
-  },
 } as const;

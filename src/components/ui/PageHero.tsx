@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import type { ReactNode } from 'react';
 import { PLACEHOLDER_IMG } from '@/constants/siteConfig';
 
 interface Crumb {
@@ -11,12 +12,14 @@ interface PageHeroProps {
   title: string;
   breadcrumb: Crumb[];
   backgroundImage?: string;
+  actions?: ReactNode;
 }
 
 export default function PageHero({
   title,
   breadcrumb,
   backgroundImage = PLACEHOLDER_IMG,
+  actions,
 }: PageHeroProps) {
   return (
     <section className="relative h-64 md:h-80 w-full overflow-hidden">
@@ -46,6 +49,9 @@ export default function PageHero({
             </span>
           ))}
         </nav>
+        {actions ? (
+          <div className="mt-6 flex flex-col sm:flex-row flex-wrap gap-3 justify-center">{actions}</div>
+        ) : null}
       </div>
     </section>
   );

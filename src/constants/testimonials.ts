@@ -1,5 +1,45 @@
-import type { Testimonial } from '@/types';
+import type { Testimonial, VideoTestimonial } from '@/types';
 import { PLACEHOLDER_IMG } from './siteConfig';
+import { IMG } from './images';
+
+export const VIDEO_TESTIMONIALS: VideoTestimonial[] = [
+  {
+    id: 'vt1',
+    title: 'Reunited with my partner after Guruji\'s guidance',
+    name: 'Client from Bangalore',
+    city: 'Bangalore',
+    serviceSlug: 'vashikaran-specialist',
+    src: '/videos/video-1.mp4',
+    poster: IMG.hero.love,
+  },
+  {
+    id: 'vt2',
+    title: 'Our family found peace after the recommended puja',
+    name: 'Client from Karnataka',
+    city: 'Karnataka',
+    serviceSlug: 'family-problem',
+    src: '/videos/video-2.mp4',
+    poster: IMG.puja.maha,
+  },
+  {
+    id: 'vt3',
+    title: 'Vastu corrections transformed our home and business',
+    name: 'Client from Bangalore',
+    city: 'Bangalore',
+    serviceSlug: 'vastu-shastra',
+    src: '/videos/video-3.mp4',
+    poster: IMG.hero.vastu,
+  },
+  {
+    id: 'vt4',
+    title: 'Grateful for Guruji\'s support through a difficult time',
+    name: 'Client from South India',
+    city: 'India',
+    serviceSlug: 'health-problem',
+    src: '/videos/video-4.mp4',
+    poster: IMG.gallery(15),
+  },
+];
 
 export const TESTIMONIALS: Testimonial[] = [
   {

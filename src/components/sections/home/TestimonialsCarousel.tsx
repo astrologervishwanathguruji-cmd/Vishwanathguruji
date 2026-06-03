@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import SectionHeader from '@/components/ui/SectionHeader';
+import Button from '@/components/ui/Button';
 import TestimonialCard from '@/components/ui/TestimonialCard';
 import { TESTIMONIALS } from '@/constants/testimonials';
 
@@ -59,6 +60,11 @@ export default function TestimonialsCarousel() {
           >
             <ChevronRight size={18} />
           </button>
+        </div>
+        <div className="text-center mt-10">
+          <Button href="/testimonials" variant="primary" size="md">
+            Read All Testimonials →
+          </Button>
         </div>
       </div>
     </section>

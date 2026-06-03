@@ -22,6 +22,16 @@ export interface Testimonial {
   date: string;
 }
 
+export interface VideoTestimonial {
+  id: string;
+  title: string;
+  name: string;
+  city: string;
+  serviceSlug: string;
+  src: string;
+  poster?: string;
+}
+
 export interface Stat {
   value: number;
   suffix: string;
