@@ -5,7 +5,7 @@ import ServicesGrid from '@/components/sections/home/ServicesGrid';
 import ScrollTicker from '@/components/ui/ScrollTicker';
 import WhyChooseUs from '@/components/sections/home/WhyChooseUs';
 import TestimonialsCarousel from '@/components/sections/home/TestimonialsCarousel';
-import GalleryPreview from '@/components/sections/home/GalleryPreview';
+import GurujiGalleryCarousel from '@/components/sections/about/GurujiGalleryCarousel';
 import PujasBand from '@/components/sections/home/PujasBand';
 import ContactBand from '@/components/sections/home/ContactBand';
 import { buildMetadata } from '@/lib/metadata';
@@ -78,7 +78,7 @@ export default function HomePage() {
       <ScrollTicker />
       <WhyChooseUs />
       <TestimonialsCarousel />
-      <GalleryPreview />
+      <GurujiGalleryCarousel />
       <PujasBand />
       <ContactBand />
     </>

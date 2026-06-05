@@ -1,7 +1,7 @@
 import PageHero from '@/components/ui/PageHero';
 import BiographySection from '@/components/sections/about/BiographySection';
 import CredentialsSection from '@/components/sections/about/CredentialsSection';
-import GurujiGalleryCarousel from '@/components/sections/about/GurujiGalleryCarousel';
+import GalleryPreview from '@/components/sections/home/GalleryPreview';
 import MissionBand from '@/components/sections/about/MissionBand';
 import DividerOrnament from '@/components/ui/DividerOrnament';
 import { buildMetadata } from '@/lib/metadata';
@@ -42,7 +42,7 @@ export default function AboutPage() {
       />
       <BiographySection />
       <CredentialsSection />
-      <GurujiGalleryCarousel />
+      <GalleryPreview />
       <MissionBand />
       <DividerOrnament variant="lotus" />
     </>

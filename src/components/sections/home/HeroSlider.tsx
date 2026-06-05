@@ -14,34 +14,34 @@ import 'swiper/css/pagination';
 
 const slides = [
   {
-    headline: 'Vashikaran & Love Problem Specialist in Bangalore',
-    sub: 'Ancient Vedic solutions to bring your loved one back into your life.',
-    image: IMG.hero.love,
-    alt: 'Best Vashikaran and love problem specialist astrologer in Bangalore — Pandit Sri Vishwanath Guruji',
+    headline: 'Marriage Related',
+    sub: 'Get trusted guidance for marriage delays, compatibility concerns, and relationship harmony through classical Vedic consultation and personalized remedies.',
+    image: IMG.svc.couple,
+    alt: 'Marriage-related astrology solutions in Bangalore by Pandit Sri Vishwanath Guruji',
   },
   {
-    headline: 'Black Magic Removal & Protection Rituals',
-    sub: 'Break free from dark energies with powerful Tantrik remedies.',
-    image: IMG.hero.magic,
-    alt: 'Trusted black magic removal and Vedic protection rituals in Bangalore by Vishwanath Guruji',
+    headline: 'Family Problems',
+    sub: 'Resolve recurring family conflicts, communication gaps, and domestic stress with practical Vedic advice tailored to your household situation.',
+    image: IMG.svc.health,
+    alt: 'Family problem astrology guidance and remedies in Bangalore by Vishwanath Guruji',
   },
   {
-    headline: 'Vastu Shastra & Home Harmony Solutions',
-    sub: 'Transform your living space into a sanctuary of positive energy.',
-    image: IMG.hero.vastu,
-    alt: 'Experienced Vastu Shastra consultant in Bangalore — home and office harmony solutions',
-  },
-  {
-    headline: 'Career, Finance & Business Problem Resolution',
-    sub: 'Unlock your true potential with planetary alignment guidance.',
+    headline: 'Career Problems',
+    sub: 'Overcome career stagnation, job instability, and workplace obstacles with astrological timing guidance and focused remedial support.',
     image: IMG.hero.career,
-    alt: 'Career, finance, and business problem solution astrologer in Bangalore — Sri Panchamukhi Astro Centre',
+    alt: 'Career problem solution astrologer in Bangalore — Sri Panchamukhi Astro Centre',
   },
   {
-    headline: 'Special Pujas & Sacred Rituals for Your Wellbeing',
-    sub: 'Sacred fire ceremonies performed with ancient Vedic precision.',
-    image: IMG.hero.puja,
-    alt: 'Authentic Vedic pujas and homa rituals performed by Pandit Vishwanath Guruji in Jayanagar, Bangalore',
+    headline: 'Health Problems',
+    sub: 'Receive spiritual and astrological guidance for ongoing health-related concerns, helping you regain clarity, peace of mind, and balance.',
+    image: IMG.svc.child,
+    alt: 'Health problem astrology consultation by Pandit Vishwanath Guruji in Bangalore',
+  },
+  {
+    headline: 'Vashikarana',
+    sub: 'Seek authentic Vedic Vashikarana guidance to rebuild love, trust, and emotional connection while staying aligned with positive spiritual practices.',
+    image: IMG.svc.magic,
+    alt: 'Vashikarana specialist services in Bangalore by Pandit Sri Vishwanath Guruji',
   },
 ];
 
