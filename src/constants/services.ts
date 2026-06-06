@@ -38,7 +38,7 @@ export const SERVICES: Service[] = [
     shortDescription: 'Vedic Vashikaran techniques to resolve love and relationship issues.',
     fullContent:
       'Vashikaran is one of the most ancient and refined branches of Vedic astrology, the art of harmonising minds and attracting positive intent. Guruji applies it strictly for ethical purposes: reuniting separated lovers, healing strained marriages, restoring a wandering partner\'s affection, and resolving stubborn family disputes. Every Vashikaran ritual draws upon classical mantras, sacred yantras, and the alignment of Venus and Moon in your chart.',
-    heroImage: IMG.svc.love,
+    heroImage: IMG.svc.vashikaran,
     icon: 'Heart',
     faq: [
       { question: 'Is Vashikaran ethical?', answer: 'Guruji practises only positive Vashikaran, never to harm, control, or manipulate against another\'s wellbeing. The purpose is restoration of natural affection.' },

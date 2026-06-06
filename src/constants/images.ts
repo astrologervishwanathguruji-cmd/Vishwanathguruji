@@ -13,6 +13,7 @@ export const IMG = {
   homeTrust: '/images/home-trust.jpg',
   svc: {
     magic: '/images/svc-magic.jpg',
+    vashikaran: '/images/vashikaran.jpeg',
     love: '/images/svc-love.jpg',
     vastu: '/images/svc-vastu.jpg',
     child: '/images/svc-child.jpg',
