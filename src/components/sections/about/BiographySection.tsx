@@ -15,7 +15,7 @@ export default function BiographySection() {
           <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent" aria-hidden />
           <div className="relative aspect-[4/5] overflow-hidden">
             <Image
-              src={IMG.gallery(13)}
+              src={IMG.about}
               alt="Pandit Sri Vishwanath Guruji"
               fill
               className="object-cover"
