@@ -3,8 +3,11 @@ import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
 import { GALLERY } from '@/constants/gallery';
 
+const NUMBERED_GALLERY_IMAGE = /^\/images\/gallery-\d+\.jpg$/;
+
 export default function GalleryPreview() {
-  const tiles = GALLERY.slice(0, 8);
+  const tiles = GALLERY.filter((img) => NUMBERED_GALLERY_IMAGE.test(img.src)).slice(0, 8);
+
   return (
     <section className="bg-site-bg py-16 md:py-24">
       <div className="max-w-container mx-auto px-6">
