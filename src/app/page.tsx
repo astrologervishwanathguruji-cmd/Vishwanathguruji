@@ -37,7 +37,7 @@ const HOME_FAQS = [
   {
     question: 'Where is Sri Panchamukhi Astro Centre located?',
     answer:
-      'The centre is located at #2004 South End E Cross, Near Sri Ragigudda Temple, Jayanagar 9th Block, Bengaluru 560069. It is easily accessible from JP Nagar, Banashankari, BTM Layout, Basavanagudi, and the entire South Bangalore region.',
+      `The centre is located at ${SITE_CONFIG.address}. It is easily accessible from JP Nagar, Banashankari, BTM Layout, Basavanagudi, and the entire South Bangalore region.`,
   },
   {
     question: 'What services does Pandit Vishwanath Guruji offer?',

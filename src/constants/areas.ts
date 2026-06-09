@@ -39,9 +39,9 @@ export const SERVICE_AREAS: ServiceArea[] = [
     city: 'Bangalore',
     region: 'Karnataka',
     blurb:
-      'Located in Jayanagar 9th Block near Sri Ragigudda Temple, Guruji is the most trusted astrologer in Jayanagar with over three decades of in-person consultations.',
+      'Located at Sri Panchamukhi Nilaya in Jayanagara 9th Block near Sri Ragigudda Temple, Guruji is the most trusted astrologer in Jayanagar with over three decades of in-person consultations.',
     postalCode: '560069',
-    geo: { latitude: 12.9252, longitude: 77.5945 },
+    geo: { latitude: 12.9152455, longitude: 77.5937114 },
   },
   {
     slug: 'jp-nagar',

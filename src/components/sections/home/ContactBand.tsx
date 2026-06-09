@@ -183,9 +183,17 @@ export default function ContactBand() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="w-full h-full"
-              title="Centre location on Google Maps"
+              title="Astrologer Vishwanath Guruji Jayanagar on Google Maps"
             />
           </div>
+          <a
+            href={SITE_CONFIG.mapDirections}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex text-sm font-semibold text-accent hover:text-primary transition-colors"
+          >
+            Open in Google Maps →
+          </a>
         </div>
       </div>
     </section>

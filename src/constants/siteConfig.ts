@@ -10,22 +10,24 @@ export const SITE_CONFIG = {
   hoursShort: 'Mon–Sun · 9:00 AM – 8:00 PM',
   cityShort: 'Jayanagar, Bangalore',
   address:
-    '#2004 South End E Cross, Near Sri Ragigudda Temple, Jayanagar 9th Block, Bengaluru 560069',
+    'No. 2004, E-Cross, Sri Panchamukhi Nilaya, Near Ragigudda Temple, Jayanagara 9th Block, Jayanagar, Bengaluru 560069',
   // Structured address used in JSON-LD
   addressStructured: {
-    streetAddress: '#2004 South End E Cross, Near Sri Ragigudda Temple, Jayanagar 9th Block',
+    streetAddress:
+      'No. 2004, E-Cross, Sri Panchamukhi Nilaya, Near Ragigudda Temple, Jayanagara 9th Block',
     addressLocality: 'Bengaluru',
     addressRegion: 'Karnataka',
     postalCode: '560069',
     addressCountry: 'IN',
   },
   geo: {
-    latitude: 12.9252,
-    longitude: 77.5945,
+    latitude: 12.9152455,
+    longitude: 77.5937114,
   },
   mapEmbed:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5966!2d77.5945!3d12.9252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU1JzMwLjciTiA3N8KwMzUnNDAuMiJF!5e0!3m2!1sen!2sin!4v1234567890',
-  mapDirections: 'https://maps.app.goo.gl/rY7V9qQQceYbky2Q8',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1944.0273116255!2d77.5937114!3d12.9152455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae152d910ad543%3A0xa6e6957b5e5622df!2sAstrologer%20Vishwanath%20Guruji%20Jayanagar!5e0!3m2!1sen!2sin!4v1749484800000!5m2!1sen!2sin',
+  mapDirections:
+    'https://www.google.com/maps/place/Astrologer+Vishwanath+Guruji+Jayanagar/@12.9150453,77.5937994,67m/data=!3m1!1e3!4m6!3m5!1s0x3bae152d910ad543:0xa6e6957b5e5622df!8m2!3d12.9152455!4d77.5937114!16s%2Fg%2F11swzq19sw?entry=ttu',
   socials: {
     instagram: 'https://instagram.com/',
     facebook: 'https://facebook.com/',

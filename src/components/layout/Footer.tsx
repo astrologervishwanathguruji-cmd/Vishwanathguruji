@@ -87,7 +87,7 @@ export default function Footer() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="w-full h-full grayscale-[40%]"
-              title="Sri Panchamukhi Astro Centre, map preview"
+              title="Astrologer Vishwanath Guruji Jayanagar on Google Maps"
             />
           </div>
           <p className="flex gap-2 text-sm leading-relaxed">

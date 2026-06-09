@@ -62,7 +62,7 @@ const AREA_FAQ = (areaName: string) => [
   },
   {
     question: `How do I reach Guruji from ${areaName}?`,
-    answer: `The centre is located at #2004 South End E Cross, Near Sri Ragigudda Temple, Jayanagar 9th Block, Bengaluru 560069 — a short drive from ${areaName}. You can also consult Guruji by phone or WhatsApp on ${SITE_CONFIG.phoneDisplay}.`,
+    answer: `The centre is located at ${SITE_CONFIG.address} — a short drive from ${areaName}. You can also consult Guruji by phone or WhatsApp on ${SITE_CONFIG.phoneDisplay}.`,
   },
   {
     question: `Does Guruji offer in-person consultations in ${areaName}?`,
