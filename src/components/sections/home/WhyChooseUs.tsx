@@ -59,7 +59,7 @@ export default function WhyChooseUs() {
           <div className="absolute -top-4 -left-4 w-full h-full border-2 border-primary/30" aria-hidden />
           <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
             <Image
-              src={IMG.gallery(1)}
+              src={IMG.homeWhyChoose}
               alt="Guruji conducting a consultation"
               fill
               className="object-cover"

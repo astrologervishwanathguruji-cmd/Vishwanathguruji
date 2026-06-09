@@ -136,7 +136,6 @@ export default function Footer() {
           <span>
             © {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
           </span>
-          <span>{SITE_CONFIG.phoneDisplay} · Designed with reverence</span>
         </div>
       </div>
     </footer>

@@ -26,9 +26,10 @@ export default function AboutSummary() {
           <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent" aria-hidden />
           <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
             <Image
-              src={IMG.puja.lakshmi}
+              src={IMG.homeBanner}
               alt="Pandit Sri Vishwanath Guruji"
               fill
+              priority
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 40vw"
             />

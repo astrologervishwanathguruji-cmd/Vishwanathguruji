@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { BaseSyntheticEvent, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -28,15 +28,12 @@ export default function ContactBand() {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors, isSubmitting },
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
 
-  const onSubmit = async (data: FormValues) => {
-    await new Promise((r) => setTimeout(r, 700));
-    console.info('Contact submission:', data);
+  const onSubmit = async (_data: FormValues, event?: BaseSyntheticEvent) => {
     setSubmitted(true);
-    reset();
+    (event?.target as HTMLFormElement | undefined)?.submit();
   };
 
   return (
@@ -63,7 +60,15 @@ export default function ContactBand() {
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <form
+              action={`https://formsubmit.co/${SITE_CONFIG.email}`}
+              method="POST"
+              onSubmit={handleSubmit(onSubmit)}
+              className="space-y-4"
+            >
+              <input type="hidden" name="_subject" value="New consultation request" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
               <div>
                 <input
                   {...register('name')}

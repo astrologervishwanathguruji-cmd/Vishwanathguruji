@@ -65,7 +65,7 @@ export const PUJAS: Puja[] = [
       'Business and investment success',
       'Family abundance and peace',
     ],
-    image: IMG.puja.lakshmi,
+    image: IMG.pujaPageLakshmi,
   },
 ];
 

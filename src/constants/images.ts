@@ -12,6 +12,8 @@ export const IMG = {
   gurujiSelfie: '/images/guruji-selfie.jpg',
   homeConsult: '/images/home-consult.jpg',
   homeTrust: '/images/home-trust.jpg',
+  homeBanner: '/images/banner.jpg',
+  homeWhyChoose: '/images/vishwanathguruji.jpg',
   svc: {
     magic: '/images/svc-magic.jpg',
     vashikaran: '/images/vashikaran.jpg',
@@ -31,8 +33,8 @@ export const IMG = {
     nav: '/images/puja-nav.jpg',
     durga: '/images/puja-durga.jpg',
     kaal: '/images/puja-kaal.jpg',
-    lakshmi: '/images/puja-lakshmi.jpg',
   },
+  pujaPageLakshmi: '/images/puja-lakshmi.jpg',
   gallery: (n: number) =>
     `/images/gallery-${String(n).padStart(2, '0')}.jpg` as `/images/gallery-${string}.jpg`,
 } as const;

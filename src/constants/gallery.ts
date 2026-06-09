@@ -21,7 +21,7 @@ export const GALLERY: GalleryImage[] = [
   make('g8', IMG.hero.vastu, 'consultations', 'Vastu site visit reading', 800, 600),
   make('g9', IMG.puja.kaal, 'ceremonies', 'Kaal Sarp Dosh Nivaran at sacred shrine', 800, 1100),
   make('g10', IMG.gallery(7), 'media', 'Television interview with Guruji', 800, 600),
-  make('g11', IMG.puja.lakshmi, 'pujas', 'Lakshmi-Kubera puja preparations', 800, 900),
+  make('g11', IMG.gallery(12), 'pujas', 'Lakshmi-Kubera puja preparations', 800, 900),
   make('g12', IMG.gallery(15), 'events', 'Free annual community puja'),
   make('g13', IMG.gallery(6), 'consultations', 'Birth chart analysis session', 800, 600),
   make('g14', IMG.gallery(10), 'ceremonies', 'Maha Rudra Abhishek ritual', 800, 1000),
