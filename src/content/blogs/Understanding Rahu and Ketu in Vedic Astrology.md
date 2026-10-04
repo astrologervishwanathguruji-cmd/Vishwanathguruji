@@ -1,10 +1,12 @@
-### slug: "understanding-rahu-ketu-vedic-astrology"
+---
+slug: "understanding-rahu-ketu-vedic-astrology"
 title: "Understanding Rahu and Ketu in Vedic Astrology"
 excerpt: "Learn the traditional significance of Rahu and Ketu in Vedic astrology, their influence on career, relationships, spirituality, and birth chart interpretation."
 date: "2026-10-04"
 image: "/images/Importance-of-Rahu-Ketu-in-Vedic-astrology.jpg"
 category: "Astrology"
 featured: true
+---
 
 Rahu and Ketu hold a unique position in Vedic astrology. Unlike the Sun, Moon, and other planets, they are not physical planets. They are known as the lunar nodes and are considered important points in the birth chart. In traditional Vedic astrology, Rahu and Ketu are associated with life experiences, desires, transformation, uncertainty, spirituality, and detachment.
 
