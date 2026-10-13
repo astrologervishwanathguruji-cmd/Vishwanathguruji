@@ -28,10 +28,10 @@ export const VIDEO_TESTIMONIALS: VideoTestimonial[] = [
   {
     id: 'vt2',
     title: 'Our family found peace after the recommended puja',
-    name: 'Client from Karnataka',
+    name: 'Client from North India',
     city: 'Karnataka',
     serviceSlug: 'family-problem',
-    src: '/videos/video-2.mp4',
+    src: '/videos/Video-05.mp4',
     poster: IMG.puja.maha,
   },
   {
