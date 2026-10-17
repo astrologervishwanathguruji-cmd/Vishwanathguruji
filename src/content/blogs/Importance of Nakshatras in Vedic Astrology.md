@@ -2,8 +2,8 @@
 slug: "importance-of-nakshatras-in-vedic-astrology"
 title: "Importance of Nakshatras in Vedic Astrology"
 excerpt: "Discover the significance of Nakshatras in Vedic astrology, their role in Kundli analysis, marriage compatibility, career guidance, and planetary periods."
-date: "2026-07-12"
-image: "/images/nakshatras-vedic-astrology.jpg"
+date: "2026-10-17"
+image: "/images/nakshatras-vedic-astrology.jpeg"
 category: "Astrology"
 featured: true
 ---
