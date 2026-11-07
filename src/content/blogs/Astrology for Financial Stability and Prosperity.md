@@ -98,4 +98,4 @@ Vedic astrology offers a traditional framework for understanding financial matte
   
 However, lasting prosperity depends on knowledge, discipline, hard work, responsible financial decisions, and practical planning. Astrology should be viewed as a source of traditional guidance rather than a guarantee of financial success.
   
-For those interested in understanding wealth-related planetary combinations and financial themes in their birth chart, consulting the best astrologer in Bangalore(https://vishwanathguruji.com) can provide personalized Vedic astrology guidance based on a detailed Kundli analysis.
+For those interested in understanding wealth-related planetary combinations and financial themes in their birth chart, consulting the [Top Astrologer in Bangalore](https://vishwanathguruji.com) can provide personalized Vedic astrology guidance based on a detailed Kundli analysis.
